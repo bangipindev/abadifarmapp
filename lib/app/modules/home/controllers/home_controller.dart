@@ -1,60 +1,9 @@
+import 'package:abadifarm/app/model/alert_model.dart';
+import 'package:abadifarm/app/model/best_seller_model.dart';
+import 'package:abadifarm/app/model/order_model.dart';
 import 'package:abadifarm/app/widgets/order_status.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-class OrderModel {
-  final String title;
-  final String subtitle;
-  final String price;
-  final OrderStatus status;
-  final IconData icon;
-
-  OrderModel({
-    required this.title,
-    required this.subtitle,
-    required this.price,
-    required this.status,
-    required this.icon,
-  });
-}
-
-class AlertModel {
-  final Color backgroundColor;
-  final Color borderColor;
-  final IconData icon;
-  final Color iconColor;
-  final String title;
-  final Color titleColor;
-  final String description;
-
-  AlertModel({
-    required this.backgroundColor,
-    required this.borderColor,
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.titleColor,
-    required this.description,
-  });
-}
-
-class BestSellerModel {
-  final String name;
-  final String soldText;
-  final String price;
-  final Color iconBg;
-  final Color iconColor;
-  final IconData icon;
-
-  BestSellerModel({
-    required this.name,
-    required this.soldText,
-    required this.price,
-    required this.iconBg,
-    required this.iconColor,
-    required this.icon,
-  });
-}
 
 class HomeController extends GetxController {
   final List<AlertModel> alerts = [

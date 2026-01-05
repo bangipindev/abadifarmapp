@@ -35,7 +35,6 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      backgroundColor: Color(0XFFF9FAFB),
       body: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
           return false;

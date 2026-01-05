@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
+import 'package:abadifarm/app/model/alert_model.dart';
 import 'package:flutter/material.dart';
 
 class AlertCard extends StatelessWidget {

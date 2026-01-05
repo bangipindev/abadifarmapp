@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
+import 'package:abadifarm/app/model/best_seller_model.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerItem extends StatelessWidget {

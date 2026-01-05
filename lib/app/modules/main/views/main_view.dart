@@ -16,13 +16,14 @@ class MainView extends GetView<MainController> {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
+        backgroundColor: Color(0XFFF9FAFB),
         body: IndexedStack(
           index: controller.currentIndex.value,
           children: [
             HomeView(),
             InventoryView(),
-            ReportingView(),
             TransactionView(),
+            ReportingView(),
             ProfileView(),
           ],
         ),

@@ -1,6 +1,97 @@
+import 'package:abadifarm/app/model/stock_barang_model.dart';
 import 'package:get/get.dart';
 
 class InventoryController extends GetxController {
-  final count = 0.obs;
-  void increment() => count.value++;
+  final List<StockBarang> stockBarangList = [
+    StockBarang(
+      name: "Ayam Broiler Hidup",
+      code: "BR-001",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 19.000",
+      hargaJual: "Rp 25.000",
+      stock: "100 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Pejantan",
+      code: "PJ-002",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 21.000",
+      hargaJual: "Rp 27.000",
+      stock: "80 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Kampung",
+      code: "AK-003",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 45.000",
+      hargaJual: "Rp 55.000",
+      stock: "40 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Frozen",
+      code: "FR-004",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 30.000",
+      hargaJual: "Rp 38.000",
+      stock: "120 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Fillet",
+      code: "FL-005",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 60.000",
+      hargaJual: "Rp 75.000",
+      stock: "60 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Broiler Hidup",
+      code: "BR-001",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 19.000",
+      hargaJual: "Rp 25.000",
+      stock: "100 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Pejantan",
+      code: "PJ-002",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 21.000",
+      hargaJual: "Rp 27.000",
+      stock: "80 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Kampung",
+      code: "AK-003",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 45.000",
+      hargaJual: "Rp 55.000",
+      stock: "40 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Frozen",
+      code: "FR-004",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 30.000",
+      hargaJual: "Rp 38.000",
+      stock: "120 Pcs",
+    ),
+    StockBarang(
+      name: "Ayam Fillet",
+      code: "FL-005",
+      unit: "Kg",
+      image: "assets/images/broiler.png",
+      hargaBeli: "Rp 60.000",
+      hargaJual: "Rp 75.000",
+      stock: "60 Pcs",
+    ),
+  ];
 }
