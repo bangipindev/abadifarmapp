@@ -5,11 +5,14 @@ class ThemesConfig {
 
   static const Color primaryBackgroundColor = Color(0xFF102216);
   static const Color secondaryBackgroundColor = Color(0xFF1a2c20);
+  static const Color tersierBackgroundColor = Color(0xFFD9F5E2);
+  static const Color baseBackgroundColor = Color(0xFFFDFDF5);
 
-  static const Color primaryIconColor = Color(0xFFFFFFFF);
+  static const Color primaryIconColor = Color(0xFF4B4B4B);
   static const Color seondaryIconColor = Color(0xFFDDD613);
 
-  static const Color primaryTextColor = Color(0xFFFFFFFF);
+  static const Color baseTextColor = Color(0xFF4B4B4B);
+  static const Color primaryTextColor = Color(0xFF0F0F0F);
   static const Color secondaryTextColor = Color(0xFFDDD613);
   static const Color tersierTextColor = Color(0xFF02A631);
 

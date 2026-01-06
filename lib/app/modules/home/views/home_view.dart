@@ -26,12 +26,12 @@ class HomeView extends GetView<HomeController> {
         title: Text(
           'Abadi Farm App',
           style: TextStyle(
-            color: ThemesConfig.primaryTextColor,
+            color: ThemesConfig.baseTextColor,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: false,
-        backgroundColor: ThemesConfig.primaryBackgroundColor,
+        backgroundColor: ThemesConfig.baseBackgroundColor,
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 25.0),
@@ -42,7 +42,7 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-      backgroundColor: ThemesConfig.primaryBackgroundColor,
+      backgroundColor: ThemesConfig.baseBackgroundColor,
       body: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
           return false;
@@ -60,7 +60,7 @@ class HomeView extends GetView<HomeController> {
                   Text(
                     "Pesanan Terbaru",
                     style: TextStyle(
-                      color: ThemesConfig.primaryTextColor,
+                      color: ThemesConfig.baseTextColor,
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
                     ),
@@ -111,7 +111,7 @@ class HomeView extends GetView<HomeController> {
                 style: TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
-                  color: ThemesConfig.primaryTextColor,
+                  color: ThemesConfig.baseTextColor,
                 ),
               ),
               SizedBox(height: 10),
@@ -150,7 +150,7 @@ class HomeView extends GetView<HomeController> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
-                      color: ThemesConfig.primaryTextColor,
+                      color: ThemesConfig.baseTextColor,
                     ),
                   ),
                   RichText(
@@ -199,7 +199,7 @@ class HomeView extends GetView<HomeController> {
                     style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.w600,
-                      color: ThemesConfig.primaryTextColor,
+                      color: ThemesConfig.baseTextColor,
                     ),
                   ),
                   RichText(

@@ -14,7 +14,8 @@ class BestSellerItem extends StatelessWidget {
       padding: EdgeInsets.all(16),
       margin: EdgeInsets.only(bottom: UiSizes.width_10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
+        color: ThemesConfig.tersierBackgroundColor,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(

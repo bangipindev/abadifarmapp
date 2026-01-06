@@ -45,20 +45,22 @@ class _ProductCategoryFilterState extends State<ProductCategoryFilter> {
               decoration: BoxDecoration(
                 color: isActive
                     ? const Color(0xFF22E66A) // active green
-                    : ThemesConfig.secondaryBackgroundColor, // dark green
+                    : ThemesConfig.baseBackgroundColor, // dark green
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
                   color: isActive
                       ? Colors.transparent
                       // ignore: deprecated_member_use
-                      : Colors.white.withOpacity(0.1),
+                      : ThemesConfig.secondaryBackgroundColor,
                 ),
               ),
               child: Center(
                 child: Text(
                   categories[index],
                   style: TextStyle(
-                    color: isActive ? Colors.black : Colors.white,
+                    color: isActive
+                        ? ThemesConfig.baseTextColor
+                        : ThemesConfig.baseTextColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
                   ),

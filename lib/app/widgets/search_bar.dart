@@ -10,7 +10,7 @@ class SearchBarWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16),
       height: 48,
       decoration: BoxDecoration(
-        color: ThemesConfig.secondaryBackgroundColor,
+        color: ThemesConfig.baseBackgroundColor,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           // ignore: deprecated_member_use

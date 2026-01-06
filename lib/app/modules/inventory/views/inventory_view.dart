@@ -21,12 +21,12 @@ class InventoryView extends GetView<InventoryController> {
         title: Text(
           'Master Barang',
           style: TextStyle(
-            color: ThemesConfig.primaryTextColor,
+            color: ThemesConfig.baseTextColor,
             fontWeight: FontWeight.bold,
           ),
         ),
         centerTitle: false,
-        backgroundColor: ThemesConfig.primaryBackgroundColor,
+        backgroundColor: ThemesConfig.baseBackgroundColor,
         actions: [
           Padding(
             padding: EdgeInsets.only(right: 25.0),
@@ -37,7 +37,7 @@ class InventoryView extends GetView<InventoryController> {
           ),
         ],
       ),
-      backgroundColor: ThemesConfig.primaryBackgroundColor,
+      backgroundColor: ThemesConfig.baseBackgroundColor,
       body: Container(
         padding: EdgeInsets.all(10),
         child: SingleChildScrollView(

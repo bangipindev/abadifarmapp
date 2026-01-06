@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/utils/themes.dart';
 import 'package:flutter/material.dart';
 
 enum OrderStatus { baru, proses, selesai }
@@ -57,8 +58,10 @@ class OrderItemCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        // color: Colors.white,
+        color: ThemesConfig.baseBackgroundColor,
         borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: ThemesConfig.primaryBorderColor),
         boxShadow: [
           BoxShadow(
             // ignore: deprecated_member_use
@@ -70,36 +73,34 @@ class OrderItemCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          // Icon kiri
           Container(
             height: 40,
             width: 40,
             decoration: BoxDecoration(
-              color: const Color(0xFFF3F4F6),
+              color: Color(0xFFF3F4F6),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Icon(icon, size: 20, color: const Color(0xFF374151)),
           ),
-          const SizedBox(width: 12),
-
-          // Text tengah
+          SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 14,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.bold,
+                    color: ThemesConfig.primaryTextColor,
                   ),
                 ),
-                const SizedBox(height: 4),
+                SizedBox(height: 4),
                 Text(
                   subtitle,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
-                    color: Color(0xFF6B7280),
+                    color: ThemesConfig.baseTextColor,
                   ),
                 ),
               ],
