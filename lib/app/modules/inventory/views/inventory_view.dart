@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/utils/themes.dart';
 import 'package:abadifarm/app/widgets/product_category_filter.dart';
 import 'package:abadifarm/app/widgets/search_bar.dart';
 import 'package:abadifarm/app/widgets/stock_barang_card.dart';
@@ -16,20 +17,27 @@ class InventoryView extends GetView<InventoryController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset("assets/icons/hamburger.png"),
-        title: const Text(
+        // leading: Icon(Icons.menu, color: ThemesConfig.primaryIconColor),
+        title: Text(
           'Master Barang',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: ThemesConfig.primaryTextColor,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        centerTitle: true,
-        backgroundColor: Color(0xFF2563EB),
+        centerTitle: false,
+        backgroundColor: ThemesConfig.primaryBackgroundColor,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 25.0),
-            child: Image.asset("assets/icons/notification.png"),
+            padding: EdgeInsets.only(right: 25.0),
+            child: Icon(
+              Icons.notifications_active_rounded,
+              color: ThemesConfig.primaryIconColor,
+            ),
           ),
         ],
       ),
+      backgroundColor: ThemesConfig.primaryBackgroundColor,
       body: Container(
         padding: EdgeInsets.all(10),
         child: SingleChildScrollView(

@@ -1,4 +1,6 @@
 import 'package:abadifarm/app/model/best_seller_model.dart';
+import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/utils/ui_sizes.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerItem extends StatelessWidget {
@@ -9,7 +11,8 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16),
+      margin: EdgeInsets.only(bottom: UiSizes.width_10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
@@ -28,9 +31,7 @@ class BestSellerItem extends StatelessWidget {
               ),
               child: Icon(product.icon, color: product.iconColor),
             ),
-
-            const SizedBox(width: 12),
-
+            SizedBox(width: ThemesConfig.padding_10),
             // Nama & Terjual
             Expanded(
               child: Column(
@@ -40,7 +41,7 @@ class BestSellerItem extends StatelessWidget {
                     product.name,
                     style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
-                  const SizedBox(height: 4),
+                  SizedBox(height: 4),
                   Text(
                     product.soldText,
                     style: TextStyle(fontSize: 12, color: Colors.grey.shade600),
@@ -48,7 +49,6 @@ class BestSellerItem extends StatelessWidget {
                 ],
               ),
             ),
-
             // Harga
             Text(
               product.price,

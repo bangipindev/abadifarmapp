@@ -16,6 +16,7 @@ class _ProductCategoryFilterState extends State<ProductCategoryFilter> {
     'Boneless',
     'Sayap',
     'Sampingan',
+    'Lain-Lain',
   ];
 
   int selectedIndex = 0;
@@ -44,7 +45,7 @@ class _ProductCategoryFilterState extends State<ProductCategoryFilter> {
               decoration: BoxDecoration(
                 color: isActive
                     ? const Color(0xFF22E66A) // active green
-                    : ThemesConfig.primaryButtonColor, // dark green
+                    : ThemesConfig.secondaryBackgroundColor, // dark green
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
                   color: isActive

@@ -7,10 +7,10 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: EdgeInsets.symmetric(horizontal: 16),
       height: 48,
       decoration: BoxDecoration(
-        color: ThemesConfig.lightTextColor,
+        color: ThemesConfig.secondaryBackgroundColor,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           // ignore: deprecated_member_use
@@ -19,11 +19,11 @@ class SearchBarWidget extends StatelessWidget {
       ),
       child: Row(
         children: [
-          const Icon(Icons.search, color: ThemesConfig.blurTextColor),
-          const SizedBox(width: 12),
+          Icon(Icons.search, color: ThemesConfig.blurTextColor),
+          SizedBox(width: 12),
           Expanded(
             child: TextField(
-              style: const TextStyle(color: Colors.white, fontSize: 14),
+              style: TextStyle(color: Colors.white, fontSize: 14),
               decoration: InputDecoration(
                 hintText: 'Search by item code or name...',
                 hintStyle: TextStyle(

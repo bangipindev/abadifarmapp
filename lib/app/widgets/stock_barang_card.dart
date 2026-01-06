@@ -19,7 +19,6 @@ class StockBarangCard extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // IMAGE
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
@@ -32,7 +31,6 @@ class StockBarangCard extends StatelessWidget {
 
           const SizedBox(width: 12),
 
-          // CONTENT
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,6 +41,7 @@ class StockBarangCard extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
+                    color: ThemesConfig.primaryTextColor,
                   ),
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
@@ -54,7 +53,7 @@ class StockBarangCard extends StatelessWidget {
                 Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         horizontal: 10,
                         vertical: 2,
                       ),
@@ -64,7 +63,7 @@ class StockBarangCard extends StatelessWidget {
                       ),
                       child: Text(
                         data.code,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w500,
                         ),
@@ -73,46 +72,94 @@ class StockBarangCard extends StatelessWidget {
                     const SizedBox(width: 8),
                     Text(
                       "Unit: ${data.unit}",
-                      style: const TextStyle(fontSize: 12),
+                      style: TextStyle(
+                        color: ThemesConfig.primaryTextColor,
+                        fontSize: 12,
+                      ),
                     ),
                   ],
                 ),
-
-                const SizedBox(height: 10),
-
-                // PRICE & STOCK
+                SizedBox(height: 10),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
-                          "BELI / JUAL",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
+                        RichText(
+                          text: TextSpan(
+                            text: 'BELI ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: ThemesConfig.secondaryTextColor,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: ' / ',
+                                style: TextStyle(
+                                  color: ThemesConfig.primaryTextColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: 'JUAL',
+                                style: TextStyle(
+                                  color: ThemesConfig.tersierTextColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "${data.hargaBeli} / ${data.hargaJual}",
-                          style: const TextStyle(fontSize: 12),
+                        SizedBox(height: 4),
+                        RichText(
+                          text: TextSpan(
+                            text: '${data.hargaBeli} ',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 12,
+                              color: ThemesConfig.secondaryTextColor,
+                            ),
+                            children: [
+                              TextSpan(
+                                text: ' / ',
+                                style: TextStyle(
+                                  color: ThemesConfig.primaryTextColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              TextSpan(
+                                text: '${data.hargaJual}',
+                                style: TextStyle(
+                                  color: ThemesConfig.tersierTextColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        const Text(
-                          "JUMLAH STOCK",
+                        Text(
+                          "STOCK",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
+                            color: ThemesConfig.secondaryTextColor,
                           ),
                         ),
-                        const SizedBox(height: 4),
-                        Text(data.stock, style: const TextStyle(fontSize: 14)),
+                        SizedBox(height: 4),
+                        Text(
+                          data.stock,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: ThemesConfig.secondaryTextColor,
+                          ),
+                        ),
                       ],
                     ),
                   ],

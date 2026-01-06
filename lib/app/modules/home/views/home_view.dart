@@ -1,4 +1,5 @@
 import 'package:abadifarm/app/utils/app_images.dart';
+import 'package:abadifarm/app/utils/themes.dart';
 import 'package:abadifarm/app/utils/ui_sizes.dart';
 import 'package:abadifarm/app/widgets/alert_card.dart';
 import 'package:abadifarm/app/widgets/best_seller.dart';
@@ -21,20 +22,27 @@ class HomeView extends GetView<HomeController> {
     UiSizes.init(context);
     return Scaffold(
       appBar: AppBar(
-        leading: Image.asset("assets/icons/hamburger.png"),
-        title: const Text(
+        // leading: Icon(Icons.menu, color: ThemesConfig.primaryIconColor),
+        title: Text(
           'Abadi Farm App',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            color: ThemesConfig.primaryTextColor,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        centerTitle: true,
-        backgroundColor: Color(0xFF2563EB),
+        centerTitle: false,
+        backgroundColor: ThemesConfig.primaryBackgroundColor,
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 25.0),
-            child: Image.asset("assets/icons/notification.png"),
+            padding: EdgeInsets.only(right: 25.0),
+            child: Icon(
+              Icons.notifications_active_rounded,
+              color: ThemesConfig.primaryIconColor,
+            ),
           ),
         ],
       ),
+      backgroundColor: ThemesConfig.primaryBackgroundColor,
       body: NotificationListener<ScrollNotification>(
         onNotification: (notification) {
           return false;
@@ -51,11 +59,31 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Text(
                     "Pesanan Terbaru",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      color: ThemesConfig.primaryTextColor,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                  Text(
-                    "Lihat Semua",
-                    style: TextStyle(color: Color(0XFF059669)),
+                  RichText(
+                    text: TextSpan(
+                      text: "Lihat Semua",
+                      style: TextStyle(
+                        color: Color(0XFF059669),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Icon(
+                            Icons.arrow_right,
+                            size: 18,
+                            color: Color(0xFF059669),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -80,7 +108,11 @@ class HomeView extends GetView<HomeController> {
               SizedBox(height: 20),
               Text(
                 'Aksi Cepat',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w600,
+                  color: ThemesConfig.primaryTextColor,
+                ),
               ),
               SizedBox(height: 10),
               Row(
@@ -115,11 +147,31 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Text(
                     "Peringatan",
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: ThemesConfig.primaryTextColor,
+                    ),
                   ),
-                  Text(
-                    "Lihat Semua",
-                    style: TextStyle(color: Color(0XFF059669)),
+                  RichText(
+                    text: TextSpan(
+                      text: "Lihat Semua",
+                      style: TextStyle(
+                        color: Color(0XFF059669),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Icon(
+                            Icons.arrow_right,
+                            size: 18,
+                            color: Color(0xFF059669),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
@@ -141,21 +193,38 @@ class HomeView extends GetView<HomeController> {
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'Produk Terlaris',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'Lihat Semua',
                     style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.w500,
+                      fontSize: 22,
+                      fontWeight: FontWeight.w600,
+                      color: ThemesConfig.primaryTextColor,
+                    ),
+                  ),
+                  RichText(
+                    text: TextSpan(
+                      text: "Lihat Semua",
+                      style: TextStyle(
+                        color: Color(0XFF059669),
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      children: [
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Icon(
+                            Icons.arrow_right,
+                            size: 18,
+                            color: Color(0xFF059669),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: ThemesConfig.padding_10),
               Obx(
                 () => Column(
                   children: controller.bestproducts
