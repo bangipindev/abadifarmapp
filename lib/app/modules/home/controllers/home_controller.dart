@@ -1,4 +1,5 @@
 import 'package:abadifarm/app/data/models/alert_model.dart';
+import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/best_seller_model.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 import 'package:abadifarm/app/data/models/order_model.dart';
@@ -14,6 +15,7 @@ class HomeController extends GetxController {
   final orders = <OrderModel>[].obs;
   final bestProducts = <BestSellerModel>[].obs;
   final categories = <ListMenuCategoryModel>[].obs;
+  final banner = <ListBannerHomeModel>[].obs;
 
   @override
   void onInit() {
@@ -26,5 +28,6 @@ class HomeController extends GetxController {
     orders.assignAll(repository.getOrders());
     bestProducts.assignAll(repository.getBestProducts());
     categories.assignAll(repository.getCategories());
+    banner.assignAll(repository.getAllBanner());
   }
 }

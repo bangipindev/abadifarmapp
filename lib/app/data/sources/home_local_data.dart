@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/order_status.dart';
@@ -77,5 +78,32 @@ class HomeLocalData {
       label: 'Asset',
       route: Routes.HOME,
     ),
+    ListMenuCategoryModel(
+      icon: 'assets/logo/logos.png',
+      label: 'Produk',
+      route: Routes.INVENTORY,
+    ),
+    ListMenuCategoryModel(
+      icon: 'assets/logo/logos.png',
+      label: 'Vendor',
+      route: Routes.REPORTING,
+    ),
+    ListMenuCategoryModel(
+      icon: 'assets/logo/logos.png',
+      label: 'Konsumen',
+      route: Routes.TRANSACTION,
+    ),
+    ListMenuCategoryModel(
+      icon: 'assets/logo/logos.png',
+      label: 'Asset',
+      route: Routes.HOME,
+    ),
+  ];
+
+  static List<ListBannerHomeModel> banner = [
+    ListBannerHomeModel(image: 'assets/images/banner1.png'),
+    ListBannerHomeModel(image: 'assets/images/banner1.png'),
+    ListBannerHomeModel(image: 'assets/images/banner1.png'),
+    ListBannerHomeModel(image: 'assets/images/banner1.png'),
   ];
 }

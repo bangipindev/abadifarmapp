@@ -15,50 +15,25 @@ class InventoryView extends GetView<InventoryController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Master Barang',
-          style: TextStyle(
-            color: ThemesConfig.baseTextColor,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: false,
-        backgroundColor: ThemesConfig.baseBackgroundColor,
-        actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 25.0),
-            child: Icon(
-              Icons.notifications_active_rounded,
-              color: ThemesConfig.primaryIconColor,
+    return Container(
+      padding: EdgeInsets.all(10),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SearchBarWidget(),
+            SizedBox(height: 20),
+            ProductCategoryFilter(),
+            SizedBox(height: 20),
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: controller.stockBarangList.length,
+              itemBuilder: (context, index) {
+                return StockBarangCard(data: controller.stockBarangList[index]);
+              },
             ),
-          ),
-        ],
-      ),
-      backgroundColor: ThemesConfig.baseBackgroundColor,
-      body: Container(
-        padding: EdgeInsets.all(10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SearchBarWidget(),
-              SizedBox(height: 20),
-              ProductCategoryFilter(),
-              SizedBox(height: 20),
-              ListView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: controller.stockBarangList.length,
-                itemBuilder: (context, index) {
-                  return StockBarangCard(
-                    data: controller.stockBarangList[index],
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-            ],
-          ),
+            SizedBox(height: 20),
+          ],
         ),
       ),
     );

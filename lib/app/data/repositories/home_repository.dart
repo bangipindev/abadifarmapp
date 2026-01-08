@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 
 import '../sources/home_local_data.dart';
@@ -20,5 +21,9 @@ class HomeRepository {
 
   List<ListMenuCategoryModel> getCategories() {
     return HomeLocalData.categories;
+  }
+
+  List<ListBannerHomeModel> getAllBanner() {
+    return HomeLocalData.banner;
   }
 }
