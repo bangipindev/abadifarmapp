@@ -6,7 +6,9 @@ class ThemesConfig {
   static const Color primaryBackgroundColor = Color(0xFF102216);
   static const Color secondaryBackgroundColor = Color(0xFF1a2c20);
   static const Color tersierBackgroundColor = Color(0xFFD9F5E2);
-  static const Color baseBackgroundColor = Color(0xFFFDFDF5);
+  static const Color baseBackgroundColor = Color(0xFFF6F7F8);
+  static const Color netralBackgroundColor = Color(0xFFFFFFFF);
+  static const Color backgroundWhite = Color(0xFFFFFFFF);
 
   static const Color primaryIconColor = Color(0xFF4B4B4B);
   static const Color seondaryIconColor = Color(0xFFDDD613);
@@ -28,7 +30,7 @@ class ThemesConfig {
   static const Color notActiveNavigationBarColor = Colors.grey;
   static const Color bottomNavigationBarBackgroundColor = Colors.white;
 
-  static const Color primaryBorderColor = Colors.grey;
+  static const Color primaryBorderColor = Color(0XFFDFE6EF);
 
   // Font Family
   static const String defaultFontFamily = 'Poppins'; // Contoh, bisa diganti

@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/detailStore/bindings/detail_store_binding.dart';
+import '../modules/detailStore/views/detail_store_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/inventory/bindings/inventory_binding.dart';
@@ -19,7 +21,7 @@ class AppPages {
   AppPages._();
 
   // ignore: constant_identifier_names
-  static const INITIAL = Routes.MAIN;
+  static const INITIAL = Routes.HOME;
 
   static final routes = [
     GetPage(name: _Paths.MAIN, page: () => MainView(), binding: MainBinding()),
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.TRANSACTION,
       page: () => TransactionView(),
       binding: TransactionBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL_STORE,
+      page: () => DetailStoreView(),
+      binding: DetailStoreBinding(),
     ),
   ];
 }

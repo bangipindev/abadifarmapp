@@ -1,3 +1,5 @@
+import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/widgets/dashboard_stats.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,9 +26,8 @@ class ReportingView extends GetView<ReportingController> {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('ReportingView is working', style: TextStyle(fontSize: 20)),
-      ),
+      backgroundColor: ThemesConfig.baseBackgroundColor,
+      body: Container(padding: EdgeInsets.all(10), child: DashboardStats()),
     );
   }
 }

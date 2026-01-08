@@ -17,7 +17,6 @@ class InventoryView extends GetView<InventoryController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // leading: Icon(Icons.menu, color: ThemesConfig.primaryIconColor),
         title: Text(
           'Master Barang',
           style: TextStyle(

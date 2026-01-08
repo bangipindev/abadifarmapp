@@ -58,8 +58,7 @@ class OrderItemCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        // color: Colors.white,
-        color: ThemesConfig.baseBackgroundColor,
+        color: ThemesConfig.backgroundWhite,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: ThemesConfig.primaryBorderColor),
         boxShadow: [

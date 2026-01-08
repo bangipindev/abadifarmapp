@@ -1,80 +1,30 @@
-import 'package:abadifarm/app/model/alert_model.dart';
-import 'package:abadifarm/app/model/best_seller_model.dart';
-import 'package:abadifarm/app/model/order_model.dart';
-import 'package:abadifarm/app/widgets/order_status.dart';
-import 'package:flutter/material.dart';
+import 'package:abadifarm/app/data/models/alert_model.dart';
+import 'package:abadifarm/app/data/models/best_seller_model.dart';
+import 'package:abadifarm/app/data/models/list_menu_category.dart';
+import 'package:abadifarm/app/data/models/order_model.dart';
+import 'package:abadifarm/app/data/repositories/home_repository.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  final List<AlertModel> alerts = [
-    AlertModel(
-      backgroundColor: const Color(0xFFFFEBEB),
-      borderColor: const Color(0xFFFFCACA),
-      icon: Icons.warning_amber_rounded,
-      iconColor: Colors.red,
-      title: 'Stok Ayam Menipis',
-      titleColor: Colors.red,
-      description: 'Tersisa 150 ekor ayam broiler. Segera lakukan restocking.',
-    ),
-    AlertModel(
-      backgroundColor: const Color(0xFFFFF8E1),
-      borderColor: const Color(0xFFFFECB3),
-      icon: Icons.access_time,
-      iconColor: Colors.orange,
-      title: 'Pesanan Menunggu',
-      titleColor: Colors.orange,
-      description: '3 pesanan menunggu konfirmasi pengiriman.',
-    ),
-  ].obs;
+  final HomeRepository repository;
 
-  final orders = <OrderModel>[
-    OrderModel(
-      title: 'Warung Bu Sari',
-      subtitle: '50 ekor ayam potong',
-      price: '2.5M',
-      status: OrderStatus.proses,
-      icon: Icons.store,
-    ),
-    OrderModel(
-      title: 'Hotel Santika',
-      subtitle: '100 ekor ayam utuh',
-      price: '8.5M',
-      status: OrderStatus.selesai,
-      icon: Icons.apartment,
-    ),
-    OrderModel(
-      title: 'Restoran Padang',
-      subtitle: '75 ekor ayam kampung',
-      price: '6.8M',
-      status: OrderStatus.baru,
-      icon: Icons.restaurant,
-    ),
-  ].obs;
+  HomeController(this.repository);
 
-  final bestproducts = <BestSellerModel>[
-    BestSellerModel(
-      name: 'Ayam Karkas',
-      soldText: '156 kg terjual',
-      price: 'Rp 3.2jt',
-      iconBg: const Color(0xFFE8F7F0),
-      iconColor: Colors.green,
-      icon: Icons.restaurant,
-    ),
-    BestSellerModel(
-      name: 'Ayam Frozen',
-      soldText: '89 kg terjual',
-      price: 'Rp 2.1jt',
-      iconBg: const Color(0xFFEAF1FF),
-      iconColor: Colors.blue,
-      icon: Icons.ac_unit,
-    ),
-    BestSellerModel(
-      name: 'Ayam Potong',
-      soldText: '124 kg terjual',
-      price: 'Rp 2.8jt',
-      iconBg: const Color(0xFFFFF1E6),
-      iconColor: Colors.deepOrange,
-      icon: Icons.local_fire_department,
-    ),
-  ].obs;
+  final alerts = <AlertModel>[].obs;
+  final orders = <OrderModel>[].obs;
+  final bestProducts = <BestSellerModel>[].obs;
+  final categories = <ListMenuCategoryModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadData();
+  }
+
+  void loadData() {
+    alerts.assignAll(repository.getAlerts());
+    orders.assignAll(repository.getOrders());
+    bestProducts.assignAll(repository.getBestProducts());
+    categories.assignAll(repository.getCategories());
+  }
 }

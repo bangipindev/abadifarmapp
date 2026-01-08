@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/model/stock_barang_model.dart';
+import 'package:abadifarm/app/data/models/stock_barang_model.dart';
 import 'package:abadifarm/app/utils/themes.dart';
 import 'package:flutter/material.dart';
 

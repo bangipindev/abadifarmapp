@@ -13,9 +13,7 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  HomeView({super.key}) {
-    Get.put(HomeController());
-  }
+  HomeView({super.key}) {}
 
   @override
   Widget build(BuildContext context) {
@@ -227,7 +225,7 @@ class HomeView extends GetView<HomeController> {
               SizedBox(height: ThemesConfig.padding_10),
               Obx(
                 () => Column(
-                  children: controller.bestproducts
+                  children: controller.bestProducts
                       .map((product) => BestSellerItem(product: product))
                       .toList(),
                 ),

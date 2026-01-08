@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/model/best_seller_model.dart';
+import 'package:abadifarm/app/data/models/best_seller_model.dart';
 import 'package:abadifarm/app/utils/themes.dart';
 import 'package:abadifarm/app/utils/ui_sizes.dart';
 import 'package:flutter/material.dart';
@@ -14,8 +14,7 @@ class BestSellerItem extends StatelessWidget {
       padding: EdgeInsets.all(16),
       margin: EdgeInsets.only(bottom: UiSizes.width_10),
       decoration: BoxDecoration(
-        // color: Colors.white,
-        color: ThemesConfig.tersierBackgroundColor,
+        color: ThemesConfig.backgroundWhite,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Padding(

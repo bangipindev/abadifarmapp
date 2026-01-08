@@ -23,6 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
@@ -38,9 +39,9 @@ class _SplashScreenState extends State<SplashScreen> {
         backgroundColor: Colors.transparent,
         body: Center(
           child: SizedBox(
-            width: Get.width * 0.5,
-            height: Get.height * 0.5,
-            child: Image.asset("assets/logo/logo.png"),
+            width: size.width * 0.5,
+            height: size.height * 0.5,
+            child: Image.asset("assets/icon/icon.png"),
           ),
         ),
       ),
