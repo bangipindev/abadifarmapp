@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/data/models/add_produk.dart';
 import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
@@ -47,6 +48,14 @@ class HomeLocalData {
   ];
 
   static List<BestSellerModel> bestProducts = [
+    BestSellerModel(
+      name: 'Ayam Karkas',
+      soldText: '156 kg terjual',
+      price: 'Rp 3.2jt',
+      iconBg: const Color(0xFFE8F7F0),
+      iconColor: Colors.green,
+      icon: Icons.restaurant,
+    ),
     BestSellerModel(
       name: 'Ayam Karkas',
       soldText: '156 kg terjual',
@@ -105,5 +114,19 @@ class HomeLocalData {
     ListBannerHomeModel(image: 'assets/images/banner1.png'),
     ListBannerHomeModel(image: 'assets/images/banner1.png'),
     ListBannerHomeModel(image: 'assets/images/banner1.png'),
+  ];
+
+  static List<Product> products = [
+    Product(
+      name: "Nike Air Max 90",
+      variant: "Size 42 • Merah",
+      price: 1500000,
+    ),
+    Product(
+      name: "Cotton T-Shirt Basic",
+      variant: "Size L • Putih",
+      price: 150000,
+      qty: 2,
+    ),
   ];
 }

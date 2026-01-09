@@ -1,4 +1,3 @@
-import 'package:abadifarm/app/utils/app_images.dart';
 import 'package:abadifarm/app/utils/themes.dart';
 import 'package:abadifarm/app/utils/ui_sizes.dart';
 import 'package:abadifarm/app/widgets/alert_card.dart';
@@ -6,7 +5,6 @@ import 'package:abadifarm/app/widgets/banner_dashboard.dart';
 import 'package:abadifarm/app/widgets/best_seller.dart';
 import 'package:abadifarm/app/widgets/kategori_item.dart';
 import 'package:abadifarm/app/widgets/order_status.dart';
-import 'package:abadifarm/app/widgets/quick_action_card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -111,42 +109,6 @@ class HomeView extends GetView<HomeController> {
                 icon: order.icon,
               );
             },
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Aksi Cepat',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.w600,
-              color: ThemesConfig.baseTextColor,
-            ),
-          ),
-          SizedBox(height: 10),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              QuickActionCard(
-                title: "Potong Ayam",
-                icon: Icon(Icons.cut, color: Colors.red, size: 20),
-                bgColor: Color(0xFFFEE2E2),
-                iconColor: Colors.red,
-                onTap: () {},
-              ),
-              QuickActionCard(
-                title: "Buat Pesanan",
-                icon: Image.asset(AppImages.shoppingCart),
-                bgColor: Color(0xFFDBEAFE),
-                iconColor: Colors.blue,
-                onTap: () {},
-              ),
-              QuickActionCard(
-                title: "Kiriman",
-                icon: Image.asset(AppImages.expedisi),
-                bgColor: Color(0xFFDCFCE7),
-                iconColor: Colors.green,
-                onTap: () {},
-              ),
-            ],
           ),
           SizedBox(height: 20),
           Row(

@@ -46,10 +46,20 @@ class KategoriItem extends StatelessWidget {
             height: 50,
             width: 50,
             decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(15),
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage(category.icon),
+                fit: BoxFit.cover,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.08),
+                  blurRadius: 10,
+                  spreadRadius: 2,
+                  offset: Offset(0, 4),
+                ),
+              ],
             ),
-            child: Image.asset(category.icon, height: 28),
           ),
           SizedBox(height: 5),
           Text(

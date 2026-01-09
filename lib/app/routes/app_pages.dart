@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/modules/transaction/views/add_transaction.dart';
 import 'package:get/get.dart';
 
 import '../modules/detailStore/bindings/detail_store_binding.dart';
@@ -14,6 +15,8 @@ import '../modules/reporting/bindings/reporting_binding.dart';
 import '../modules/reporting/views/reporting_view.dart';
 import '../modules/transaction/bindings/transaction_binding.dart';
 import '../modules/transaction/views/transaction_view.dart';
+import '../modules/ubahpassword/bindings/ubahpassword_binding.dart';
+import '../modules/ubahpassword/views/ubahpassword_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +53,16 @@ class AppPages {
       name: _Paths.DETAIL_STORE,
       page: () => DetailStoreView(),
       binding: DetailStoreBinding(),
+    ),
+    GetPage(
+      name: _Paths.UBAHPASSWORD,
+      page: () => const UbahpasswordView(),
+      binding: UbahpasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_TRANSACTION,
+      page: () => const TransaksiBaruPage(),
+      binding: TransactionBinding(),
     ),
   ];
 }

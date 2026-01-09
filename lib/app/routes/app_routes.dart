@@ -18,6 +18,8 @@ abstract class Routes {
   // ignore: constant_identifier_names
   static const MAIN = _Paths.MAIN;
   static const DETAIL_STORE = _Paths.DETAIL_STORE;
+  static const UBAHPASSWORD = _Paths.UBAHPASSWORD;
+  static const ADD_TRANSACTION = _Paths.ADD_TRANSACTION;
 }
 
 abstract class _Paths {
@@ -37,4 +39,6 @@ abstract class _Paths {
   // ignore: constant_identifier_names
   static const MAIN = '/main';
   static const DETAIL_STORE = '/detail-store';
+  static const UBAHPASSWORD = '/ubahpassword';
+  static const ADD_TRANSACTION = '/add_transaction';
 }
