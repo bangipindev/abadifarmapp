@@ -6,7 +6,7 @@ class ThemesConfig {
   static const Color primaryBackgroundColor = Color(0xFF102216);
   static const Color secondaryBackgroundColor = Color(0xFF1a2c20);
   static const Color tersierBackgroundColor = Color(0xFFD9F5E2);
-  static const Color baseBackgroundColor = Color(0xFFF6F7F8);
+  static const Color baseBackgroundColor = Colors.grey;
   static const Color netralBackgroundColor = Color(0xFFFFFFFF);
   static const Color backgroundWhite = Color(0xFFFFFFFF);
 

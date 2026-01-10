@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/modules/inventory/views/add_product.dart';
 import 'package:abadifarm/app/modules/transaction/views/add_transaction.dart';
 import 'package:get/get.dart';
 
@@ -63,6 +64,11 @@ class AppPages {
       name: _Paths.ADD_TRANSACTION,
       page: () => const TransaksiBaruPage(),
       binding: TransactionBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_PRODUCT,
+      page: () => const TambahMasterBarangPage(),
+      binding: InventoryBinding(),
     ),
   ];
 }

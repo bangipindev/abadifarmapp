@@ -20,6 +20,7 @@ abstract class Routes {
   static const DETAIL_STORE = _Paths.DETAIL_STORE;
   static const UBAHPASSWORD = _Paths.UBAHPASSWORD;
   static const ADD_TRANSACTION = _Paths.ADD_TRANSACTION;
+  static const ADD_PRODUCT = _Paths.ADD_PRODUCT;
 }
 
 abstract class _Paths {
@@ -41,4 +42,5 @@ abstract class _Paths {
   static const DETAIL_STORE = '/detail-store';
   static const UBAHPASSWORD = '/ubahpassword';
   static const ADD_TRANSACTION = '/add_transaction';
+  static const ADD_PRODUCT = '/add_product';
 }

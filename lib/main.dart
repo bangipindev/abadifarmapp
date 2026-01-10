@@ -9,6 +9,10 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+        scaffoldBackgroundColor: Colors.grey[100],
+      ),
       title: "Abadi Farm",
       home: SplashScreen(),
       getPages: AppPages.routes,

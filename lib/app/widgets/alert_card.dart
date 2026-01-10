@@ -1,10 +1,10 @@
 import 'package:abadifarm/app/data/models/alert_model.dart';
 import 'package:flutter/material.dart';
 
-class AlertCard extends StatelessWidget {
+class AlertItemCard extends StatelessWidget {
   final AlertModel alert;
 
-  const AlertCard({super.key, required this.alert});
+  const AlertItemCard({super.key, required this.alert});
 
   @override
   Widget build(BuildContext context) {

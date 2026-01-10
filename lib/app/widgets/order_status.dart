@@ -60,7 +60,7 @@ class OrderItemCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: ThemesConfig.backgroundWhite,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ThemesConfig.primaryBorderColor),
+        border: Border.all(color: Colors.grey.shade300),
         boxShadow: [
           BoxShadow(
             // ignore: deprecated_member_use

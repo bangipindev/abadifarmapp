@@ -17,100 +17,103 @@ class _UbahpasswordViewState extends State<UbahpasswordView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[100],
-      appBar: AppBar(title: const Text('Keamanan'), centerTitle: true),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// ===== INFO CARD =====
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: _securityInfoCard(),
-            ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey[100],
+        appBar: AppBar(title: const Text('Keamanan'), centerTitle: true),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              /// ===== INFO CARD =====
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: _securityInfoCard(),
+              ),
 
-            /// ===== PASSWORD =====
-            _sectionContainer(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  _passwordField(
-                    label: 'Kata Sandi Saat Ini',
-                    hint: 'Masukkan kata sandi lama',
-                    obscure: !showOld,
-                    onToggle: () => setState(() => showOld = !showOld),
-                  ),
-                  const SizedBox(height: 12),
-                  _passwordField(
-                    label: 'Kata Sandi Baru',
-                    hint: 'Minimal 8 karakter',
-                    obscure: !showNew,
-                    onToggle: () => setState(() => showNew = !showNew),
-                  ),
-                  const SizedBox(height: 12),
-                  _passwordField(
-                    label: 'Konfirmasi Kata Sandi',
-                    hint: 'Ulangi kata sandi baru',
-                    obscure: !showConfirm,
-                    onToggle: () => setState(() => showConfirm = !showConfirm),
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: const Text('Simpan Perubahan'),
+              /// ===== PASSWORD =====
+              _sectionContainer(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _passwordField(
+                      label: 'Kata Sandi Saat Ini',
+                      hint: 'Masukkan kata sandi lama',
+                      obscure: !showOld,
+                      onToggle: () => setState(() => showOld = !showOld),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 12),
+                    _passwordField(
+                      label: 'Kata Sandi Baru',
+                      hint: 'Minimal 8 karakter',
+                      obscure: !showNew,
+                      onToggle: () => setState(() => showNew = !showNew),
+                    ),
+                    const SizedBox(height: 12),
+                    _passwordField(
+                      label: 'Konfirmasi Kata Sandi',
+                      hint: 'Ulangi kata sandi baru',
+                      obscure: !showConfirm,
+                      onToggle: () =>
+                          setState(() => showConfirm = !showConfirm),
+                    ),
+                    const SizedBox(height: 20),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 48,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Simpan Perubahan'),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            _sectionTitle('VERIFIKASI & KEAMANAN'),
-            _sectionContainer(
-              child: Column(
-                children: [
-                  _switchTile(
-                    icon: Icons.lock_outline,
-                    title: 'Verifikasi Dua Langkah',
-                    subtitle: 'Aktifkan OTP via SMS/WA',
-                    value: twoFactorEnabled,
-                    onChanged: (v) => setState(() => twoFactorEnabled = v),
-                  ),
-                  const Divider(),
-                  _switchTile(
-                    icon: Icons.fingerprint,
-                    title: 'Masuk dengan Biometrik',
-                    subtitle: 'FaceID / TouchID',
-                    value: biometricEnabled,
-                    onChanged: (v) => setState(() => biometricEnabled = v),
-                  ),
-                ],
+              _sectionTitle('VERIFIKASI & KEAMANAN'),
+              _sectionContainer(
+                child: Column(
+                  children: [
+                    _switchTile(
+                      icon: Icons.lock_outline,
+                      title: 'Verifikasi Dua Langkah',
+                      subtitle: 'Aktifkan OTP via SMS/WA',
+                      value: twoFactorEnabled,
+                      onChanged: (v) => setState(() => twoFactorEnabled = v),
+                    ),
+                    const Divider(),
+                    _switchTile(
+                      icon: Icons.fingerprint,
+                      title: 'Masuk dengan Biometrik',
+                      subtitle: 'FaceID / TouchID',
+                      value: biometricEnabled,
+                      onChanged: (v) => setState(() => biometricEnabled = v),
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            _sectionTitle('AKTIVITAS'),
-            _sectionContainer(
-              child: Column(
-                children: [
-                  _arrowTile(
-                    icon: Icons.history,
-                    title: 'Riwayat Login',
-                    subtitle: 'Terakhir login hari ini, 09:41',
-                  ),
-                  const Divider(),
-                  _arrowTile(
-                    icon: Icons.devices,
-                    title: 'Perangkat Terdaftar',
-                    subtitle: 'iPhone 13, MacBook Pro',
-                  ),
-                ],
+              _sectionTitle('AKTIVITAS'),
+              _sectionContainer(
+                child: Column(
+                  children: [
+                    _arrowTile(
+                      icon: Icons.history,
+                      title: 'Riwayat Login',
+                      subtitle: 'Terakhir login hari ini, 09:41',
+                    ),
+                    const Divider(),
+                    _arrowTile(
+                      icon: Icons.devices,
+                      title: 'Perangkat Terdaftar',
+                      subtitle: 'iPhone 13, MacBook Pro',
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-          ],
+              SizedBox(height: 30),
+            ],
+          ),
         ),
       ),
     );

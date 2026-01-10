@@ -25,35 +25,35 @@ class MainView extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => Scaffold(
-        appBar: AppBar(
-          // leading: Icon(Icons.menu, color: ThemesConfig.primaryIconColor),
-          title: Text(
-            'Abadi Farm App',
-            style: TextStyle(
-              color: ThemesConfig.baseTextColor,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          centerTitle: false,
-          backgroundColor: ThemesConfig.baseBackgroundColor,
-          actions: [
-            Padding(
-              padding: EdgeInsets.only(right: 25.0),
-              child: Icon(
-                Icons.notifications_active_rounded,
-                color: ThemesConfig.primaryIconColor,
+      () => SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              'Abadi Farm App',
+              style: TextStyle(
+                color: ThemesConfig.baseTextColor,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
-        body: IndexedStack(
-          index: controller.currentIndex.value,
-          children: pagesMenu,
-        ),
-        bottomNavigationBar: BottomNavigation(
-          currentIndex: controller.currentIndex.value,
-          onTap: controller.changeIndex,
+            centerTitle: false,
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(right: 25.0),
+                child: Icon(
+                  Icons.notifications_active_rounded,
+                  color: ThemesConfig.primaryIconColor,
+                ),
+              ),
+            ],
+          ),
+          body: IndexedStack(
+            index: controller.currentIndex.value,
+            children: pagesMenu,
+          ),
+          bottomNavigationBar: BottomNavigation(
+            currentIndex: controller.currentIndex.value,
+            onTap: controller.changeIndex,
+          ),
         ),
       ),
     );

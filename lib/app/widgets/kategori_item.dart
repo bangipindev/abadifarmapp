@@ -38,7 +38,7 @@ class KategoriItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.toNamed(category.route),
+      onTap: () => Get.offAllNamed(category.route),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

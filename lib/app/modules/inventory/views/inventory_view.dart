@@ -1,5 +1,6 @@
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
 import 'package:abadifarm/app/modules/inventory/controllers/inventory_controller.dart';
+import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -34,24 +35,37 @@ class _InventoryViewState extends State<InventoryView> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(16),
-      child: Column(
-        children: [
-          _searchBar(),
-          SizedBox(height: 12),
-          _filterBar(),
-          SizedBox(height: 16),
-          Expanded(
-            child: ListView.separated(
-              itemCount: filteredProducts.length,
-              separatorBuilder: (_, __) => SizedBox(height: 12),
-              itemBuilder: (context, index) {
-                return ProductCard(product: filteredProducts[index]);
-              },
-            ),
+    return SafeArea(
+      child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Get.toNamed(Routes.ADD_PRODUCT);
+          },
+          backgroundColor: Colors.blue,
+          elevation: 12,
+          child: const Icon(Icons.add, color: Colors.white, size: 28),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              _searchBar(),
+              SizedBox(height: 12),
+              _filterBar(),
+              SizedBox(height: 16),
+              Expanded(
+                child: ListView.separated(
+                  itemCount: filteredProducts.length,
+                  separatorBuilder: (_, __) => SizedBox(height: 12),
+                  itemBuilder: (context, index) {
+                    return ProductCard(product: filteredProducts[index]);
+                  },
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
@@ -77,32 +91,36 @@ class _InventoryViewState extends State<InventoryView> {
   }
 
   Widget _filterBar() {
-    return Row(
-      children: [
-        _filterButton(
-          label: 'Semua',
-          selected: selectedStatus == null,
-          onTap: () => setState(() => selectedStatus = null),
-        ),
-        const SizedBox(width: 8),
-        _filterButton(
-          label: 'Tersedia',
-          selected: selectedStatus == StockStatus.tersedia,
-          onTap: () => setState(() => selectedStatus = StockStatus.tersedia),
-        ),
-        const SizedBox(width: 8),
-        _filterButton(
-          label: 'Stok Rendah',
-          selected: selectedStatus == StockStatus.stokRendah,
-          onTap: () => setState(() => selectedStatus = StockStatus.stokRendah),
-        ),
-        const SizedBox(width: 8),
-        _filterButton(
-          label: 'Habis',
-          selected: selectedStatus == StockStatus.habis,
-          onTap: () => setState(() => selectedStatus = StockStatus.habis),
-        ),
-      ],
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          _filterButton(
+            label: 'Semua',
+            selected: selectedStatus == null,
+            onTap: () => setState(() => selectedStatus = null),
+          ),
+          const SizedBox(width: 8),
+          _filterButton(
+            label: 'Tersedia',
+            selected: selectedStatus == StockStatus.tersedia,
+            onTap: () => setState(() => selectedStatus = StockStatus.tersedia),
+          ),
+          const SizedBox(width: 8),
+          _filterButton(
+            label: 'Stok Rendah',
+            selected: selectedStatus == StockStatus.stokRendah,
+            onTap: () =>
+                setState(() => selectedStatus = StockStatus.stokRendah),
+          ),
+          const SizedBox(width: 8),
+          _filterButton(
+            label: 'Habis',
+            selected: selectedStatus == StockStatus.habis,
+            onTap: () => setState(() => selectedStatus = StockStatus.habis),
+          ),
+        ],
+      ),
     );
   }
 
