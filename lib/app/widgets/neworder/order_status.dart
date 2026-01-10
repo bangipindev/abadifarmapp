@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
 enum OrderStatus { baru, proses, selesai }
@@ -58,7 +58,7 @@ class OrderItemCard extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 12),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: ThemesConfig.backgroundWhite,
+        color: AppColors.backgroundWhite,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: Colors.grey.shade300),
         boxShadow: [
@@ -91,7 +91,7 @@ class OrderItemCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
-                    color: ThemesConfig.primaryTextColor,
+                    color: AppColors.primaryTextColor,
                   ),
                 ),
                 SizedBox(height: 4),
@@ -99,7 +99,7 @@ class OrderItemCard extends StatelessWidget {
                   subtitle,
                   style: TextStyle(
                     fontSize: 12,
-                    color: ThemesConfig.baseTextColor,
+                    color: AppColors.baseTextColor,
                   ),
                 ),
               ],

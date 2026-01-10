@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/widgets/card_stats.dart';
+import 'package:abadifarm/app/widgets/card_statistik/card_stats.dart';
 import 'package:flutter/material.dart';
 
 class DashboardStats extends StatelessWidget {

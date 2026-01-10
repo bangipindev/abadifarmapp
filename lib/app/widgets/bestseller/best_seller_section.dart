@@ -1,11 +1,12 @@
+import 'package:abadifarm/app/core/values/app_colors.dart';
+import 'package:abadifarm/app/core/values/app_sizes.dart';
 import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
-import 'package:abadifarm/app/utils/themes.dart';
-import 'package:abadifarm/app/widgets/order_status.dart';
+import 'package:abadifarm/app/widgets/bestseller/best_seller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class NewOrderWidget extends GetView<HomeController> {
-  const NewOrderWidget({super.key});
+class BestSellerSection extends GetView<HomeController> {
+  const BestSellerSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +17,22 @@ class NewOrderWidget extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Pesanan Terbaru",
+              'Produk Terlaris',
               style: TextStyle(
-                color: ThemesConfig.baseTextColor,
                 fontSize: 22,
                 fontWeight: FontWeight.w600,
+                color: AppColors.baseTextColor,
               ),
             ),
             RichText(
               text: TextSpan(
                 text: "Lihat Semua",
-                style: const TextStyle(
+                style: TextStyle(
                   color: Color(0XFF059669),
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
                 ),
-                children: const [
+                children: [
                   WidgetSpan(
                     alignment: PlaceholderAlignment.middle,
                     child: Icon(
@@ -45,26 +46,20 @@ class NewOrderWidget extends GetView<HomeController> {
             ),
           ],
         ),
-
-        const SizedBox(height: 10),
-
-        ListView.builder(
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemCount: controller.orders.length,
-          itemBuilder: (context, index) {
-            final order = controller.orders[index];
-            return OrderItemCard(
-              title: order.title,
-              subtitle: order.subtitle,
-              price: order.price,
-              status: order.status,
-              icon: order.icon,
-            );
-          },
+        SizedBox(height: AppSizes.height_10),
+        Container(
+          padding: EdgeInsets.all(AppSizes.size_12),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            children: controller.bestProducts
+                .map((product) => BestSellerItem(product: product))
+                .toList(),
+          ),
         ),
-
-        const SizedBox(height: 20),
+        SizedBox(height: 40),
       ],
     );
   }

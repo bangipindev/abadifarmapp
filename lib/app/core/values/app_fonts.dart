@@ -1,4 +1,4 @@
-class baseFontSize {
+class AppFonts {
   static const double normal_12 = 12;
   static const double normal_14 = 14;
   static const double normal_16 = 16;

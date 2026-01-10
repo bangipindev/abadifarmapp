@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/widgets/dashboard_stats.dart';
+import 'package:abadifarm/app/widgets/card_statistik/dashboard_stats.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';

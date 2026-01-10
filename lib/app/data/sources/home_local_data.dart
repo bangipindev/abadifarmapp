@@ -3,7 +3,7 @@ import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
-import 'package:abadifarm/app/widgets/order_status.dart';
+import 'package:abadifarm/app/widgets/neworder/order_status.dart';
 import 'package:flutter/material.dart';
 import '../models/alert_model.dart';
 import '../models/order_model.dart';
@@ -69,7 +69,7 @@ class HomeLocalData {
 
   static List<ListMenuCategoryModel> categories = [
     ListMenuCategoryModel(
-      label: 'Add Product',
+      label: 'Produk',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 1, // Inventory
@@ -83,7 +83,7 @@ class HomeLocalData {
       route: Routes.UBAHPASSWORD,
     ),
     ListMenuCategoryModel(
-      label: 'TOKO',
+      label: 'Toko',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 4, // Inventory

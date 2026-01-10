@@ -1,6 +1,6 @@
-import 'package:abadifarm/app/utils/constants.dart';
-import 'package:abadifarm/app/utils/themes.dart';
-import 'package:abadifarm/app/utils/ui_sizes.dart';
+import 'package:abadifarm/app/core/values/app_fonts.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
+import 'package:abadifarm/app/core/values/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -11,7 +11,7 @@ class DetailStoreView extends GetView<DetailStoreController> {
   const DetailStoreView({super.key});
   @override
   Widget build(BuildContext context) {
-    UiSizes.init(context);
+    AppSizes.init(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -66,18 +66,18 @@ class DetailStoreView extends GetView<DetailStoreController> {
                 Text(
                   "Abadi Farm",
                   style: TextStyle(
-                    fontSize: baseFontSize.medium_22,
+                    fontSize: AppFonts.medium_22,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
                   "Rumah Pemotongan Ayam",
                   style: TextStyle(
-                    fontSize: baseFontSize.normal_14,
+                    fontSize: AppFonts.normal_14,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                SizedBox(height: ThemesConfig.padding_20),
+                SizedBox(height: AppSizes.height_20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -87,12 +87,12 @@ class DetailStoreView extends GetView<DetailStoreController> {
                     actionItem(icon: Icons.share, label: "Bagikan"),
                   ],
                 ),
-                SizedBox(height: ThemesConfig.padding_20),
+                SizedBox(height: AppSizes.height_20),
                 Container(
-                  height: UiSizes.height_200,
+                  height: AppSizes.height_200,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: ThemesConfig.netralBackgroundColor,
+                    color: AppColors.netralBackgroundColor,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
@@ -112,13 +112,13 @@ class DetailStoreView extends GetView<DetailStoreController> {
                           child: Text(
                             "Tentang Toko",
                             style: TextStyle(
-                              fontSize: baseFontSize.medium_22,
+                              fontSize: AppFonts.medium_22,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                           alignment: Alignment.centerLeft,
                         ),
-                        SizedBox(height: ThemesConfig.padding_10),
+                        SizedBox(height: AppSizes.height_20),
                         Text(
                           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                           style: TextStyle(color: Colors.black87, height: 1.5),
@@ -128,12 +128,12 @@ class DetailStoreView extends GetView<DetailStoreController> {
                     ),
                   ),
                 ),
-                SizedBox(height: ThemesConfig.padding_20),
+                SizedBox(height: AppSizes.height_20),
                 Container(
-                  height: UiSizes.height_200,
+                  height: AppSizes.height_200,
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                    color: ThemesConfig.netralBackgroundColor,
+                    color: AppColors.netralBackgroundColor,
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
@@ -156,7 +156,7 @@ class DetailStoreView extends GetView<DetailStoreController> {
                               Text(
                                 "Jam Operasional",
                                 style: TextStyle(
-                                  fontSize: baseFontSize.medium_22,
+                                  fontSize: AppFonts.medium_22,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
@@ -178,13 +178,13 @@ class DetailStoreView extends GetView<DetailStoreController> {
                           ),
                           alignment: Alignment.centerLeft,
                         ),
-                        SizedBox(height: ThemesConfig.padding_10),
+                        SizedBox(height: AppSizes.height_20),
                         ListTile(
                           leading: CircleAvatar(child: Icon(Icons.punch_clock)),
                           title: Text('Senin - Jumat'),
                           subtitle: Text(
                             'Sewaktu-waktu bisa berubah',
-                            style: TextStyle(fontSize: baseFontSize.normal_12),
+                            style: TextStyle(fontSize: AppFonts.normal_12),
                           ),
                           trailing: Text('08:00 - 17:00'),
                         ),
@@ -193,7 +193,7 @@ class DetailStoreView extends GetView<DetailStoreController> {
                           title: Text('Sabtu - Ahad'),
                           subtitle: Text(
                             'Sewaktu-waktu bisa berubah',
-                            style: TextStyle(fontSize: baseFontSize.normal_12),
+                            style: TextStyle(fontSize: AppFonts.normal_12),
                           ),
                           trailing: Text('08:00 - 15:00'),
                         ),
@@ -201,7 +201,7 @@ class DetailStoreView extends GetView<DetailStoreController> {
                     ),
                   ),
                 ),
-                SizedBox(height: ThemesConfig.padding_20),
+                SizedBox(height: AppSizes.height_20),
               ],
             ),
           ),

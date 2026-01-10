@@ -1,7 +1,7 @@
-import 'package:abadifarm/app/utils/constants.dart';
-import 'package:abadifarm/app/utils/ui_sizes.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
+import 'package:abadifarm/app/core/values/app_fonts.dart';
+import 'package:abadifarm/app/core/values/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:abadifarm/app/utils/themes.dart';
 import 'package:get/get.dart';
 
 import '../controllers/transaction_controller.dart';
@@ -13,7 +13,7 @@ class TransactionView extends GetView<TransactionController> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: ThemesConfig.padding_10),
+          padding: EdgeInsets.symmetric(horizontal: AppSizes.height_10),
           child: Column(
             children: [
               Row(
@@ -23,23 +23,23 @@ class TransactionView extends GetView<TransactionController> {
                     child: Center(
                       child: Text(
                         "Catat Pembelian",
-                        style: TextStyle(fontSize: baseFontSize.medium_22),
+                        style: TextStyle(fontSize: AppFonts.medium_22),
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: UiSizes.height_10),
+              SizedBox(height: AppSizes.height_10),
               Divider(color: Colors.grey[200]),
-              SizedBox(height: UiSizes.height_20),
+              SizedBox(height: AppSizes.height_20),
               Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Informasi Umum",
-                  style: TextStyle(fontSize: baseFontSize.normal_20),
+                  style: TextStyle(fontSize: AppFonts.normal_20),
                 ),
               ),
-              SizedBox(height: UiSizes.height_10),
+              SizedBox(height: AppSizes.height_10),
               _label("Supplier"),
               _inputBox(
                 hint: "Pilih Supplier",
@@ -55,9 +55,7 @@ class TransactionView extends GetView<TransactionController> {
                   _label("Detail Item"),
                   Text(
                     "2 Items Added",
-                    style: TextStyle(
-                      color: ThemesConfig.secondaryBackgroundColor,
-                    ),
+                    style: TextStyle(color: AppColors.secondaryBackgroundColor),
                   ),
                 ],
               ),
@@ -204,8 +202,8 @@ Widget _label(String text) => Padding(
     child: Text(
       text,
       style: TextStyle(
-        fontSize: baseFontSize.normal_16,
-        color: ThemesConfig.baseTextColor,
+        fontSize: AppFonts.normal_16,
+        color: AppColors.baseTextColor,
         fontWeight: FontWeight.bold,
       ),
     ),
@@ -237,15 +235,13 @@ Widget _numberBox(String label, String value) => Column(
 );
 
 BoxDecoration _cardDecoration() => BoxDecoration(
-  color: ThemesConfig.baseBackgroundColor,
+  color: AppColors.baseBackgroundColor,
   borderRadius: BorderRadius.circular(12),
   border: Border.all(color: Colors.green.shade900),
 );
 
 TextStyle _titleStyle() =>
-    TextStyle(color: ThemesConfig.baseTextColor, fontWeight: FontWeight.w600);
+    TextStyle(color: AppColors.baseTextColor, fontWeight: FontWeight.w600);
 
-TextStyle _subText() => TextStyle(
-  color: ThemesConfig.baseTextColor,
-  fontSize: baseFontSize.normal_12,
-);
+TextStyle _subText() =>
+    TextStyle(color: AppColors.baseTextColor, fontSize: AppFonts.normal_12);

@@ -1,5 +1,5 @@
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:abadifarm/app/utils/themes.dart';
 import 'package:get/get.dart';
 
 import '../controllers/transaction_controller.dart';
@@ -9,12 +9,12 @@ class TransactionView extends GetView<TransactionController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemesConfig.baseBackgroundColor,
+      backgroundColor: AppColors.baseBackgroundColor,
       appBar: AppBar(
         title: const Text(
           'Orders',
           style: TextStyle(
-            color: ThemesConfig.baseTextColor,
+            color: AppColors.baseTextColor,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -24,7 +24,7 @@ class TransactionView extends GetView<TransactionController> {
             padding: EdgeInsets.only(right: 25.0),
             child: Icon(
               Icons.notifications_active_rounded,
-              color: ThemesConfig.primaryIconColor,
+              color: AppColors.primaryIconColor,
             ),
           ),
         ],

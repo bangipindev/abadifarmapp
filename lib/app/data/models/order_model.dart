@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/widgets/order_status.dart';
+import 'package:abadifarm/app/widgets/neworder/order_status.dart';
 import 'package:flutter/material.dart';
 
 class OrderModel {

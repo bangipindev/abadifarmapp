@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -70,8 +70,8 @@ class _BottomNavigationState extends State<BottomNavigation>
       itemCount: iconList.length,
       tabBuilder: (int index, bool isActive) {
         final color = isActive
-            ? ThemesConfig.activeNavigationBarColor
-            : ThemesConfig.notActiveNavigationBarColor;
+            ? AppColors.activeNavigationBarColor
+            : AppColors.notActiveNavigationBarColor;
 
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -96,7 +96,7 @@ class _BottomNavigationState extends State<BottomNavigation>
       gapLocation: GapLocation.none,
       notchSmoothness: NotchSmoothness.defaultEdge,
       onTap: widget.onTap,
-      backgroundColor: ThemesConfig.bottomNavigationBarBackgroundColor,
+      backgroundColor: AppColors.bottomNavigationBarBackgroundColor,
       hideAnimationController: _hideBottomBarAnimationController,
     );
   }

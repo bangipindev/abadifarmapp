@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ProductCategoryFilter extends StatefulWidget {
@@ -45,13 +45,13 @@ class _ProductCategoryFilterState extends State<ProductCategoryFilter> {
               decoration: BoxDecoration(
                 color: isActive
                     ? const Color(0xFF22E66A) // active green
-                    : ThemesConfig.baseBackgroundColor, // dark green
+                    : AppColors.baseBackgroundColor, // dark green
                 borderRadius: BorderRadius.circular(24),
                 border: Border.all(
                   color: isActive
                       ? Colors.transparent
                       // ignore: deprecated_member_use
-                      : ThemesConfig.secondaryBackgroundColor,
+                      : AppColors.secondaryBackgroundColor,
                 ),
               ),
               child: Center(
@@ -59,8 +59,8 @@ class _ProductCategoryFilterState extends State<ProductCategoryFilter> {
                   categories[index],
                   style: TextStyle(
                     color: isActive
-                        ? ThemesConfig.baseTextColor
-                        : ThemesConfig.baseTextColor,
+                        ? AppColors.baseTextColor
+                        : AppColors.baseTextColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 14,
                   ),

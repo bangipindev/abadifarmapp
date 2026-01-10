@@ -1,4 +1,4 @@
-import 'package:abadifarm/app/utils/themes.dart';
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarWidget extends StatelessWidget {
@@ -10,16 +10,16 @@ class SearchBarWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16),
       height: 48,
       decoration: BoxDecoration(
-        color: ThemesConfig.baseBackgroundColor,
+        color: AppColors.baseBackgroundColor,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           // ignore: deprecated_member_use
-          color: ThemesConfig.blurTextColor.withOpacity(0.4),
+          color: AppColors.blurTextColor.withOpacity(0.4),
         ),
       ),
       child: Row(
         children: [
-          Icon(Icons.search, color: ThemesConfig.blurTextColor),
+          Icon(Icons.search, color: AppColors.blurTextColor),
           SizedBox(width: 12),
           Expanded(
             child: TextField(
@@ -28,7 +28,7 @@ class SearchBarWidget extends StatelessWidget {
                 hintText: 'Search by item code or name...',
                 hintStyle: TextStyle(
                   // ignore: deprecated_member_use
-                  color: ThemesConfig.blurTextColor.withOpacity(0.6),
+                  color: AppColors.blurTextColor.withOpacity(0.6),
                 ),
                 border: InputBorder.none,
                 isCollapsed: true,
