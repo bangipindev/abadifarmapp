@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 import '../controllers/main_controller.dart';
 
+// class MainView extends GetView<MainController> {
 class MainView extends GetView<MainController> {
   MainView({super.key});
 
@@ -25,35 +26,35 @@ class MainView extends GetView<MainController> {
   @override
   Widget build(BuildContext context) {
     return Obx(
-      () => SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              'Abadi Farm App',
-              style: TextStyle(
-                color: ThemesConfig.baseTextColor,
-                fontWeight: FontWeight.bold,
+      () => Scaffold(
+        appBar: AppBar(
+          title: Text(
+            'Abadi Farm App',
+            style: TextStyle(
+              color: ThemesConfig.baseTextColor,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          centerTitle: false,
+          actions: [
+            Padding(
+              padding: EdgeInsets.only(right: 25.0),
+              child: Icon(
+                Icons.notifications_active_rounded,
+                color: ThemesConfig.primaryIconColor,
               ),
             ),
-            centerTitle: false,
-            actions: [
-              Padding(
-                padding: EdgeInsets.only(right: 25.0),
-                child: Icon(
-                  Icons.notifications_active_rounded,
-                  color: ThemesConfig.primaryIconColor,
-                ),
-              ),
-            ],
-          ),
-          body: IndexedStack(
+          ],
+        ),
+        body: SafeArea(
+          child: IndexedStack(
             index: controller.currentIndex.value,
             children: pagesMenu,
           ),
-          bottomNavigationBar: BottomNavigation(
-            currentIndex: controller.currentIndex.value,
-            onTap: controller.changeIndex,
-          ),
+        ),
+        bottomNavigationBar: BottomNavigation(
+          currentIndex: controller.currentIndex.value,
+          onTap: controller.changeIndex,
         ),
       ),
     );

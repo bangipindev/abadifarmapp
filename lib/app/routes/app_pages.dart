@@ -1,23 +1,16 @@
 import 'package:abadifarm/app/modules/inventory/views/add_product.dart';
+import 'package:abadifarm/app/modules/main/bindings/main_binding.dart';
 import 'package:abadifarm/app/modules/transaction/views/add_transaction.dart';
-import 'package:get/get.dart';
 
 import '../modules/detailStore/bindings/detail_store_binding.dart';
 import '../modules/detailStore/views/detail_store_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
 import '../modules/inventory/bindings/inventory_binding.dart';
-import '../modules/inventory/views/inventory_view.dart';
-import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
-import '../modules/profile/bindings/profile_binding.dart';
-import '../modules/profile/views/profile_view.dart';
-import '../modules/reporting/bindings/reporting_binding.dart';
-import '../modules/reporting/views/reporting_view.dart';
 import '../modules/transaction/bindings/transaction_binding.dart';
-import '../modules/transaction/views/transaction_view.dart';
 import '../modules/ubahpassword/bindings/ubahpassword_binding.dart';
 import '../modules/ubahpassword/views/ubahpassword_view.dart';
+
+import 'package:get/get.dart';
 
 part 'app_routes.dart';
 
@@ -28,28 +21,10 @@ class AppPages {
   static const INITIAL = Routes.MAIN;
 
   static final routes = [
-    GetPage(name: _Paths.MAIN, page: () => MainView(), binding: MainBinding()),
-    GetPage(name: _Paths.HOME, page: () => HomeView(), binding: HomeBinding()),
-    GetPage(
-      name: _Paths.INVENTORY,
-      page: () => InventoryView(),
-      binding: InventoryBinding(),
-    ),
-    GetPage(
-      name: _Paths.REPORTING,
-      page: () => ReportingView(),
-      binding: ReportingBinding(),
-    ),
-    GetPage(
-      name: _Paths.PROFILE,
-      page: () => ProfileView(),
-      binding: ProfileBinding(),
-    ),
-    GetPage(
-      name: _Paths.TRANSACTION,
-      page: () => TransactionView(),
-      binding: TransactionBinding(),
-    ),
+    GetPage(name: Routes.MAIN, page: () => MainView(), binding: MainBinding()),
+
+    /// ===== PAGES DI LUAR BOTTOM NAV =====
+    ///
     GetPage(
       name: _Paths.DETAIL_STORE,
       page: () => DetailStoreView(),
@@ -57,17 +32,17 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.UBAHPASSWORD,
-      page: () => const UbahpasswordView(),
+      page: () => UbahpasswordView(),
       binding: UbahpasswordBinding(),
     ),
     GetPage(
       name: _Paths.ADD_TRANSACTION,
-      page: () => const TransaksiBaruPage(),
+      page: () => TransaksiBaruPage(),
       binding: TransactionBinding(),
     ),
     GetPage(
       name: _Paths.ADD_PRODUCT,
-      page: () => const TambahMasterBarangPage(),
+      page: () => TambahMasterBarangPage(),
       binding: InventoryBinding(),
     ),
   ];

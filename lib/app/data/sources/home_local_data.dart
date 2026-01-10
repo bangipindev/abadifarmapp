@@ -69,44 +69,32 @@ class HomeLocalData {
 
   static List<ListMenuCategoryModel> categories = [
     ListMenuCategoryModel(
+      label: 'Add Product',
       icon: 'assets/icon/icon.png',
-      label: 'Produk',
-      route: Routes.INVENTORY,
+      targetType: CategoryTargetType.page,
+      tabIndex: 1, // Inventory
+      route: Routes.ADD_PRODUCT, // Inventory
     ),
     ListMenuCategoryModel(
+      label: 'Akun',
       icon: 'assets/icon/icon.png',
-      label: 'Vendor',
-      route: Routes.REPORTING,
+      targetType: CategoryTargetType.page,
+      tabIndex: 4, // Inventory
+      route: Routes.UBAHPASSWORD,
     ),
     ListMenuCategoryModel(
+      label: 'TOKO',
       icon: 'assets/icon/icon.png',
-      label: 'Konsumen',
-      route: Routes.TRANSACTION,
+      targetType: CategoryTargetType.page,
+      tabIndex: 4, // Inventory
+      route: Routes.DETAIL_STORE,
     ),
     ListMenuCategoryModel(
+      label: 'Lain-Lain',
       icon: 'assets/icon/icon.png',
-      label: 'Asset',
-      route: Routes.HOME,
-    ),
-    ListMenuCategoryModel(
-      icon: 'assets/icon/icon.png',
-      label: 'Kegiatan',
-      route: Routes.INVENTORY,
-    ),
-    ListMenuCategoryModel(
-      icon: 'assets/icon/icon.png',
-      label: 'Karkas',
-      route: Routes.REPORTING,
-    ),
-    ListMenuCategoryModel(
-      icon: 'assets/icon/icon.png',
-      label: 'Sampingan',
-      route: Routes.TRANSACTION,
-    ),
-    ListMenuCategoryModel(
-      icon: 'assets/icon/icon.png',
-      label: 'Lainnya',
-      route: Routes.HOME,
+      targetType: CategoryTargetType.page,
+      tabIndex: 3,
+      route: Routes.ADD_TRANSACTION, // Inventory
     ),
   ];
 

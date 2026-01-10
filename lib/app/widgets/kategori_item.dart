@@ -1,4 +1,6 @@
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
+import 'package:abadifarm/app/modules/main/controllers/main_controller.dart';
+import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,7 +40,20 @@ class KategoriItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.offAllNamed(category.route),
+      onTap: () {
+        if (category.targetType == CategoryTargetType.tab) {
+          print(category.tabIndex);
+          // 👉 PINDAH TAB (dalam MainView)
+          final controller = Get.find<MainController>();
+          controller.changeIndex(category.tabIndex!);
+          Get.offAllNamed(Routes.MAIN);
+        } else {
+          // 👉 PAGE FULL SCREEN (tanpa bottom nav)
+          print(category.route);
+
+          Get.toNamed(category.route!);
+        }
+      },
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

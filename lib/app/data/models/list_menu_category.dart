@@ -1,11 +1,22 @@
+enum CategoryTargetType { tab, page }
+
 class ListMenuCategoryModel {
   final String icon;
   final String label;
-  final String route;
+
+  /// untuk tab
+  final int? tabIndex;
+
+  /// untuk page
+  final String? route;
+
+  final CategoryTargetType targetType;
 
   ListMenuCategoryModel({
-    required this.icon,
     required this.label,
-    required this.route,
+    required this.icon,
+    required this.targetType,
+    this.tabIndex,
+    this.route,
   });
 }
