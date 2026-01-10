@@ -1,6 +1,7 @@
 import 'package:abadifarm/app/data/models/add_produk.dart';
 import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
+import 'package:abadifarm/app/data/models/stock_barang_model.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/order_status.dart';
 import 'package:flutter/material.dart';
@@ -68,43 +69,43 @@ class HomeLocalData {
 
   static List<ListMenuCategoryModel> categories = [
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
+      icon: 'assets/icon/icon.png',
       label: 'Produk',
       route: Routes.INVENTORY,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
+      icon: 'assets/icon/icon.png',
       label: 'Vendor',
       route: Routes.REPORTING,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
+      icon: 'assets/icon/icon.png',
       label: 'Konsumen',
       route: Routes.TRANSACTION,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
+      icon: 'assets/icon/icon.png',
       label: 'Asset',
       route: Routes.HOME,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
-      label: 'Produk',
+      icon: 'assets/icon/icon.png',
+      label: 'Kegiatan',
       route: Routes.INVENTORY,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
-      label: 'Vendor',
+      icon: 'assets/icon/icon.png',
+      label: 'Karkas',
       route: Routes.REPORTING,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
-      label: 'Konsumen',
+      icon: 'assets/icon/icon.png',
+      label: 'Sampingan',
       route: Routes.TRANSACTION,
     ),
     ListMenuCategoryModel(
-      icon: 'assets/logo/logos.png',
-      label: 'Asset',
+      icon: 'assets/icon/icon.png',
+      label: 'Lainnya',
       route: Routes.HOME,
     ),
   ];
@@ -127,6 +128,73 @@ class HomeLocalData {
       variant: "Size L • Putih",
       price: 150000,
       qty: 2,
+    ),
+  ];
+
+  static List<Barang> barang = [
+    Barang(
+      sku: 'SKU-001',
+      name: 'Kemeja Flanel Slim Fit',
+      stock: 42,
+      price: 150000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.tersedia,
+    ),
+    Barang(
+      sku: 'SKU-002',
+      name: 'Sepatu Sneakers Putih',
+      stock: 5,
+      price: 450000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.stokRendah,
+    ),
+    Barang(
+      sku: 'SKU-003',
+      name: 'Dompet Kulit Eksklusif',
+      stock: 0,
+      price: 225000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.habis,
+    ),
+    Barang(
+      sku: 'SKU-004',
+      name: 'Jam Tangan Analog Classic',
+      stock: 12,
+      price: 1200000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.tersedia,
+    ),
+    Barang(
+      sku: 'SKU-005',
+      name: 'Ayam Karkas 1 Kg',
+      stock: 42,
+      price: 150000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.tersedia,
+    ),
+    Barang(
+      sku: 'SKU-006',
+      name: 'Kepala Ceker',
+      stock: 5,
+      price: 450000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.stokRendah,
+    ),
+    Barang(
+      sku: 'SKU-007',
+      name: 'Ayam Ingkung Joper',
+      stock: 0,
+      price: 225000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.habis,
+    ),
+    Barang(
+      sku: 'SKU-008',
+      name: 'Telur Ayam',
+      stock: 12,
+      price: 1200000,
+      image: 'assets/icon/icon.png',
+      status: StockStatus.tersedia,
     ),
   ];
 }

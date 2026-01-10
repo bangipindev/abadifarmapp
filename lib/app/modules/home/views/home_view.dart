@@ -77,7 +77,7 @@ class HomeView extends GetView<HomeController> {
                   text: "Lihat Semua",
                   style: TextStyle(
                     color: Color(0XFF059669),
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                   children: [
@@ -127,7 +127,7 @@ class HomeView extends GetView<HomeController> {
                   text: "Lihat Semua",
                   style: TextStyle(
                     color: Color(0XFF059669),
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                   children: [
@@ -174,7 +174,7 @@ class HomeView extends GetView<HomeController> {
                   text: "Lihat Semua",
                   style: TextStyle(
                     color: Color(0XFF059669),
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
                   children: [

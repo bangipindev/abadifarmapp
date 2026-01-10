@@ -53,6 +53,7 @@ class KategoriItem extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
+                  // ignore: deprecated_member_use
                   color: Colors.black.withOpacity(0.08),
                   blurRadius: 10,
                   spreadRadius: 2,
@@ -64,7 +65,7 @@ class KategoriItem extends StatelessWidget {
           SizedBox(height: 5),
           Text(
             category.label,
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 14),
             textAlign: TextAlign.center,
           ),
         ],
