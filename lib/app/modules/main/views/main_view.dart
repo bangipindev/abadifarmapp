@@ -1,6 +1,6 @@
 import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:abadifarm/app/modules/home/views/home_view.dart';
-import 'package:abadifarm/app/modules/product/views/inventory_view.dart';
+import 'package:abadifarm/app/modules/product/views/product_view.dart';
 import 'package:abadifarm/app/modules/profile/views/profile_view.dart';
 import 'package:abadifarm/app/modules/reporting/views/reporting_view.dart';
 // import 'package:abadifarm/app/modules/transaction/views/transaction_view.dart';
@@ -17,7 +17,7 @@ class MainView extends GetView<MainController> {
 
   final pagesMenu = [
     HomeView(),
-    InventoryView(),
+    ProductView(),
     // TransactionView(),
     ReportingView(),
     ProfileView(),

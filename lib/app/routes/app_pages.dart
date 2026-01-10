@@ -2,8 +2,8 @@ import 'package:abadifarm/app/modules/product/views/add_product.dart';
 import 'package:abadifarm/app/modules/main/bindings/main_binding.dart';
 import 'package:abadifarm/app/modules/transaction/views/add_transaction.dart';
 
-import '../modules/detailStore/bindings/detail_store_binding.dart';
-import '../modules/detailStore/views/detail_store_view.dart';
+import '../modules/detailstore/bindings/detail_store_binding.dart';
+import '../modules/detailstore/views/detail_store_view.dart';
 import '../modules/product/bindings/inventory_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/transaction/bindings/transaction_binding.dart';
@@ -43,7 +43,7 @@ class AppPages {
     GetPage(
       name: _Paths.ADD_PRODUCT,
       page: () => TambahMasterBarangPage(),
-      binding: InventoryBinding(),
+      binding: ProductBinding(),
     ),
   ];
 }

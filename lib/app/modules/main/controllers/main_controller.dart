@@ -20,7 +20,7 @@ class MainController extends GetxController {
 
     title.value = switch (index) {
       0 => 'Home',
-      1 => 'Inventory',
+      1 => 'Product',
       2 => 'Reporting',
       3 => 'Profile',
       _ => 'Home',

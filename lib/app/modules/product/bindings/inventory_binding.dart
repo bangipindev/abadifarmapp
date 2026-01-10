@@ -1,14 +1,14 @@
-import 'package:abadifarm/app/data/repositories/inventory_repository.dart';
+import 'package:abadifarm/app/data/repositories/product_repository.dart';
 import 'package:get/get.dart';
 
-import '../controllers/inventory_controller.dart';
+import '../controllers/product_controller.dart';
 
-class InventoryBinding extends Bindings {
+class ProductBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<InventoryRepository>(() => InventoryRepository());
-    Get.lazyPut<InventoryController>(
-      () => InventoryController(Get.find<InventoryRepository>()),
+    Get.lazyPut<ProductRepository>(() => ProductRepository());
+    Get.lazyPut<ProductController>(
+      () => ProductController(Get.find<ProductRepository>()),
     );
   }
 }

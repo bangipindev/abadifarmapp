@@ -1,5 +1,5 @@
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
-import 'package:abadifarm/app/modules/product/controllers/inventory_controller.dart';
+import 'package:abadifarm/app/modules/product/controllers/product_controller.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/product/product_card.dart';
 import 'package:flutter/material.dart';
@@ -7,15 +7,15 @@ import 'dart:async';
 
 import 'package:get/get.dart';
 
-class InventoryView extends StatefulWidget {
-  const InventoryView({super.key});
+class ProductView extends StatefulWidget {
+  const ProductView({super.key});
 
   @override
-  State<InventoryView> createState() => _InventoryViewState();
+  State<ProductView> createState() => _ProductViewState();
 }
 
-class _InventoryViewState extends State<InventoryView> {
-  final InventoryController controller = Get.find<InventoryController>();
+class _ProductViewState extends State<ProductView> {
+  final ProductController controller = Get.find<ProductController>();
   String search = '';
   StockStatus? selectedStatus; // null = semua
 

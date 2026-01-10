@@ -1,7 +1,7 @@
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
 import '../sources/home_local_data.dart';
 
-class InventoryRepository {
+class ProductRepository {
   List<Barang> getBarang() {
     return HomeLocalData.barang;
   }

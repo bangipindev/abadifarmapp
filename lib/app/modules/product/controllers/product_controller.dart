@@ -1,10 +1,10 @@
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
-import 'package:abadifarm/app/data/repositories/inventory_repository.dart';
+import 'package:abadifarm/app/data/repositories/product_repository.dart';
 import 'package:get/get.dart';
 
-class InventoryController extends GetxController {
-  final InventoryRepository repository;
-  InventoryController(this.repository);
+class ProductController extends GetxController {
+  final ProductRepository repository;
+  ProductController(this.repository);
 
   final barang = <Barang>[].obs;
   @override
