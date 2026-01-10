@@ -1,7 +1,7 @@
 import 'package:abadifarm/app/data/repositories/home_repository.dart';
 import 'package:abadifarm/app/data/repositories/inventory_repository.dart';
 import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
-import 'package:abadifarm/app/modules/inventory/controllers/inventory_controller.dart';
+import 'package:abadifarm/app/modules/product/controllers/inventory_controller.dart';
 import 'package:get/get.dart';
 
 import '../controllers/main_controller.dart';

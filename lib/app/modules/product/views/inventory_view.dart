@@ -1,5 +1,5 @@
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
-import 'package:abadifarm/app/modules/inventory/controllers/inventory_controller.dart';
+import 'package:abadifarm/app/modules/product/controllers/inventory_controller.dart';
 import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/product/product_card.dart';
 import 'package:flutter/material.dart';

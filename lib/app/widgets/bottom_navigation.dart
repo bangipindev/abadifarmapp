@@ -24,7 +24,7 @@ class _BottomNavigationState extends State<BottomNavigation>
   final List<IconData> iconList = const [
     Icons.home_rounded,
     Icons.inventory_rounded,
-    Icons.shopping_cart,
+    // Icons.shopping_cart,
     Icons.bar_chart_rounded,
     Icons.person_rounded,
   ];
@@ -32,7 +32,7 @@ class _BottomNavigationState extends State<BottomNavigation>
   final List<String> labels = const [
     'Home',
     'Stok',
-    'Orders',
+    // 'Orders',
     'Laporan',
     'Akun Saya',
   ];

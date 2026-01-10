@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/core/values/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class TambahMasterBarangPage extends StatefulWidget {
@@ -48,16 +49,21 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: const Text('Tambah Produk'), centerTitle: false),
-        body: Form(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tambah Produk'),
+        centerTitle: false,
+        backgroundColor: Colors.white,
+      ),
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Form(
           key: _formKey,
           child: ListView(
-            padding: const EdgeInsets.all(15),
+            padding: EdgeInsets.all(15),
             children: [
               _uploadFoto(),
-              const SizedBox(height: 16),
+              SizedBox(height: 10),
 
               _input(
                 label: 'Nama Barang',
@@ -68,7 +74,6 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
               SizedBox(height: 16),
               _dropdownKategori(),
               SizedBox(height: 12),
-
               Row(
                 children: [
                   Expanded(
@@ -91,10 +96,10 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
                 ],
               ),
 
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               _stokInput(),
 
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
               _input(
                 label: 'Deskripsi Produk',
                 controller: deskripsiController,
@@ -121,8 +126,8 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
                       ),
                       onPressed: isLoading ? null : submitForm,
                       child: isLoading
-                          ? const CircularProgressIndicator(color: Colors.white)
-                          : const Text(
+                          ? CircularProgressIndicator(color: Colors.white)
+                          : Text(
                               'Simpan Barang',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -130,6 +135,7 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
                   ),
                 ],
               ),
+              SizedBox(height: AppSizes.size_20),
             ],
           ),
         ),
@@ -139,27 +145,27 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
 
   Widget _uploadFoto() {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.blueAccent, style: BorderStyle.solid),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(
         children: [
-          const Icon(Icons.camera_alt_outlined, size: 40),
-          const SizedBox(height: 8),
-          const Text('Upload Foto Produk'),
-          const SizedBox(height: 4),
+          Icon(Icons.camera_alt_outlined, size: 40),
+          SizedBox(height: 8),
+          Text('Upload Foto Produk'),
+          SizedBox(height: 4),
           Text(
             'Tambahkan hingga 5 foto produk (Maks 5MB)',
             style: TextStyle(color: Colors.grey[600], fontSize: 12),
           ),
-          const SizedBox(height: 12),
+          SizedBox(height: 12),
           ElevatedButton(
             onPressed: () {
               // TODO: Integrasi image_picker
             },
-            child: const Text('Pilih Foto'),
+            child: Text('Pilih Foto'),
           ),
         ],
       ),
@@ -168,7 +174,7 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
 
   Widget _dropdownKategori() {
     return DropdownButtonFormField<String>(
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
         labelText: 'Kategori',
         border: OutlineInputBorder(),
       ),
