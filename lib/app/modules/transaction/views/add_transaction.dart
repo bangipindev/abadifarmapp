@@ -55,7 +55,6 @@ class _TransaksiBaruPageState extends State<TransaksiBaruPage> {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        leading: const Icon(Icons.close),
         title: const Text('Transaksi Baru'),
         actions: [TextButton(onPressed: () {}, child: const Text('Simpan'))],
       ),
