@@ -68,7 +68,7 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
               _input(
                 label: 'Nama Barang',
                 controller: namaController,
-                hint: 'Contoh: Kopi Susu Gula Aren',
+                hint: 'Contoh: Ayam Karkas',
                 validator: (v) => v!.isEmpty ? 'Nama barang wajib diisi' : null,
               ),
               SizedBox(height: 16),
@@ -174,11 +174,15 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
 
   Widget _dropdownKategori() {
     return DropdownButtonFormField<String>(
+      isDense: true,
       decoration: InputDecoration(
-        labelText: 'Kategori',
-        border: OutlineInputBorder(),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 12,
+        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       ),
-      value: selectedKategori,
+      initialValue: selectedKategori,
       items: kategoriList
           .map((e) => DropdownMenuItem(value: e, child: Text(e)))
           .toList(),
@@ -199,15 +203,7 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
             keyboardType: TextInputType.number,
           ),
         ),
-        const SizedBox(width: 8),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-          decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: const Text('Pcs'),
-        ),
+        SizedBox(width: 8),
       ],
     );
   }
@@ -231,9 +227,15 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
           keyboardType: keyboardType,
           maxLines: maxLines,
           validator: validator,
+          style: TextStyle(fontSize: 13),
           decoration: InputDecoration(
             hintText: hint,
             prefixText: prefix,
+            isDense: true,
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 12,
+            ),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
           ),
         ),

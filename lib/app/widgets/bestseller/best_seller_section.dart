@@ -1,11 +1,11 @@
 import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:abadifarm/app/core/values/app_sizes.dart';
-import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
+import 'package:abadifarm/app/modules/reporting/controllers/reporting_controller.dart';
 import 'package:abadifarm/app/widgets/bestseller/best_seller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class BestSellerSection extends GetView<HomeController> {
+class BestSellerSection extends GetView<ReportingController> {
   const BestSellerSection({super.key});
 
   @override

@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +11,7 @@ class SimpleNavigation extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: currentIndex,
+      backgroundColor: AppColors.navigationBarColor,
       selectedItemColor: Colors.blue, // 🔵 ACTIVE
       unselectedItemColor: Colors.grey, // ⚪ INACTIVE
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w600),
@@ -31,8 +33,12 @@ class SimpleNavigation extends StatelessWidget {
             break;
         }
       },
+      elevation: 10,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: 'Home'),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home_rounded),
+          label: 'Beranda',
+        ),
         BottomNavigationBarItem(
           icon: Icon(Icons.inventory_rounded),
           label: 'Product',

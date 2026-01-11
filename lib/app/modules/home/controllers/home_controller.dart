@@ -12,8 +12,8 @@ class HomeController extends GetxController {
 
   HomeController(this.repository);
 
-  final alerts = <AlertModel>[].obs;
   final orders = <OrderModel>[].obs;
+  final alerts = <AlertModel>[].obs;
   final bestProducts = <BestSellerModel>[].obs;
   final categories = <ListMenuCategoryModel>[].obs;
   final banner = <ListBannerHomeModel>[].obs;

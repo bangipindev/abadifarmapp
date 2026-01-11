@@ -1,11 +1,11 @@
 import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:abadifarm/app/core/values/app_sizes.dart';
-import 'package:abadifarm/app/modules/home/controllers/home_controller.dart';
+import 'package:abadifarm/app/modules/reporting/controllers/reporting_controller.dart';
 import 'package:abadifarm/app/widgets/alert/alert_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AlertSection extends GetView<HomeController> {
+class AlertSection extends GetView<ReportingController> {
   const AlertSection({super.key});
 
   @override

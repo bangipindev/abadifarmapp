@@ -1,3 +1,4 @@
+import 'package:abadifarm/app/core/values/app_colors.dart';
 import 'package:abadifarm/app/widgets/simple_navigation.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,10 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
+      appBar: AppBar(
+        title: Text(title),
+        backgroundColor: AppColors.appbarColor,
+      ),
       body: child,
       bottomNavigationBar: SimpleNavigation(currentIndex: currentIndex),
     );

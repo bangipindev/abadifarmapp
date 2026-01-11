@@ -12,21 +12,21 @@ class DetailStoreView extends GetView<DetailStoreController> {
   @override
   Widget build(BuildContext context) {
     AppSizes.init(context);
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Informasi Toko'),
-          centerTitle: true,
-          backgroundColor: Colors.grey[100],
-          actions: [
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Icon(Icons.edit, color: Colors.blue),
-            ),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Informasi Toko'),
+        centerTitle: true,
         backgroundColor: Colors.grey[100],
-        body: SingleChildScrollView(
+        actions: [
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Icon(Icons.edit, color: Colors.blue),
+          ),
+        ],
+      ),
+      backgroundColor: Colors.grey[100],
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.all(10),
             child: Column(

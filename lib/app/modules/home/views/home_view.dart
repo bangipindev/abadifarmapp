@@ -1,7 +1,5 @@
 import 'package:abadifarm/app/core/values/app_sizes.dart';
-import 'package:abadifarm/app/widgets/alert/alert_section.dart';
 import 'package:abadifarm/app/widgets/banner/banner_section.dart';
-import 'package:abadifarm/app/widgets/bestseller/best_seller_section.dart';
 import 'package:abadifarm/app/widgets/kategori/kategori_section.dart';
 import 'package:abadifarm/app/widgets/neworder/new_order.dart';
 import 'package:abadifarm/app/widgets/quick_action/quick_action_section.dart';
@@ -24,10 +22,8 @@ class HomeView extends GetView<HomeController> {
         children: [
           BannerSection(),
           KategoriSection(),
-          NewOrderWidget(),
           QuickActionSection(),
-          AlertSection(),
-          BestSellerSection(),
+          NewOrderWidget(),
         ],
       ),
     );

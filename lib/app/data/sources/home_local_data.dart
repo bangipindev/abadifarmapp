@@ -77,7 +77,7 @@ class HomeLocalData {
       route: '', // Inventory
     ),
     ListMenuCategoryModel(
-      label: 'Boneless',
+      label: 'Sampingan',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 4, // Inventory
@@ -91,10 +91,17 @@ class HomeLocalData {
       route: '',
     ),
     ListMenuCategoryModel(
-      label: 'Sayap',
+      label: 'Telur',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 3,
+      route: '', // Inventory
+    ),
+    ListMenuCategoryModel(
+      label: 'Ayam Joper',
+      icon: 'assets/icon/icon.png',
+      targetType: CategoryTargetType.page,
+      tabIndex: 1, // Inventory
       route: '', // Inventory
     ),
     ListMenuCategoryModel(
@@ -106,13 +113,6 @@ class HomeLocalData {
     ),
     ListMenuCategoryModel(
       label: 'Ayam Ungkep',
-      icon: 'assets/icon/icon.png',
-      targetType: CategoryTargetType.page,
-      tabIndex: 4, // Inventory
-      route: '',
-    ),
-    ListMenuCategoryModel(
-      label: 'Paha',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 4, // Inventory

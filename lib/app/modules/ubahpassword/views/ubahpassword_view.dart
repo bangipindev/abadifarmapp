@@ -17,11 +17,11 @@ class _UbahpasswordViewState extends State<UbahpasswordView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.grey[100],
-        appBar: AppBar(title: const Text('Keamanan'), centerTitle: true),
-        body: SingleChildScrollView(
+    return Scaffold(
+      backgroundColor: Colors.grey[100],
+      appBar: AppBar(title: const Text('Keamanan'), centerTitle: true),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

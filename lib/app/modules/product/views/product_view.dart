@@ -35,18 +35,18 @@ class _ProductViewState extends State<ProductView> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Get.toNamed(Routes.ADD_PRODUCT);
-          },
-          backgroundColor: Colors.blue,
-          elevation: 12,
-          child: const Icon(Icons.add, color: Colors.white, size: 28),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        body: Padding(
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Get.toNamed(Routes.ADD_PRODUCT);
+        },
+        backgroundColor: Colors.blue,
+        elevation: 12,
+        child: const Icon(Icons.add, color: Colors.white, size: 28),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(
             children: [

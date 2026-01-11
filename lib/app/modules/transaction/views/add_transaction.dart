@@ -60,268 +60,281 @@ class _TransaksiBaruPageState extends State<TransaksiBaruPage> {
         actions: [TextButton(onPressed: () {}, child: const Text('Simpan'))],
       ),
       bottomNavigationBar: _bottomBar(),
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _sectionTitle('INFORMASI PELANGGAN'),
-            _card(
-              child: // Dropdown
-              DropdownButtonFormField<String>(
-                initialValue: null,
-                hint: const Text("Pilih Pelanggan"),
-                items: const [
-                  DropdownMenuItem(value: "1", child: Text("Pelanggan A")),
-                  DropdownMenuItem(value: "2", child: Text("Pelanggan B")),
-                ],
-                onChanged: (value) {
-                  print(value);
-                },
-                icon: const Icon(Icons.keyboard_arrow_down),
-                decoration: InputDecoration(
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 14,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey.shade100,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _sectionTitle('INFORMASI PELANGGAN'),
+              _card(
+                child: // Dropdown
+                DropdownButtonFormField<String>(
+                  initialValue: null,
+                  hint: const Text("Pilih Pelanggan"),
+                  items: const [
+                    DropdownMenuItem(value: "1", child: Text("Pelanggan A")),
+                    DropdownMenuItem(value: "2", child: Text("Pelanggan B")),
+                  ],
+                  onChanged: (value) {
+                    print(value);
+                  },
+                  icon: const Icon(Icons.keyboard_arrow_down),
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                      vertical: 10,
+                      horizontal: 12,
+                    ),
+                    isDense: true,
+                    filled: true,
+                    fillColor: Colors.grey.shade100,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: BorderSide.none,
+                    ),
                   ),
                 ),
               ),
-            ),
 
-            _sectionTitle('DETAIL TRANSAKSI'),
-            _card(
-              child: Container(
-                padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.grey.shade300),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "DETAIL TRANSAKSI",
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
+              _sectionTitle('DETAIL TRANSAKSI'),
+              _card(
+                child: Container(
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.grey.shade300),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "DETAIL TRANSAKSI",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 12),
+                      SizedBox(height: 12),
 
-                    Row(
-                      children: [
-                        /// No Invoice
-                        Expanded(
-                          child: TextField(
-                            readOnly: true,
-                            decoration: InputDecoration(
-                              labelText: "No. Invoice",
-                              hintText: "#INV-230912",
-                              suffixIcon: const Icon(Icons.copy, size: 18),
-                              filled: true,
-                              fillColor: Colors.grey.shade100,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
-                        ),
-
-                        const SizedBox(width: 12),
-
-                        /// Tanggal (Clickable)
-                        Expanded(
-                          child: TextField(
-                            controller: _dateController,
-                            readOnly: true,
-                            onTap: () => _selectDate(context),
-                            decoration: InputDecoration(
-                              labelText: "Tanggal",
-                              hintText: "Pilih Tanggal",
-                              suffixIcon: const Icon(
-                                Icons.calendar_today,
-                                size: 18,
-                              ),
-                              filled: true,
-                              fillColor: Colors.grey.shade100,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            Column(
-              children: [
-                SizedBox(height: 30),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      "DAFTAR PRODUK",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: hapusSemua,
-                      child: const Text(
-                        "Hapus Semua",
-                        style: TextStyle(color: Colors.blue),
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 12),
-
-                /// LIST PRODUK
-                ...controller.products.map((product) {
-                  return Container(
-                    margin: const EdgeInsets.only(bottom: 12),
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.grey.shade300),
-                    ),
-                    child: Row(
-                      children: [
-                        /// IMAGE PLACEHOLDER
-                        Container(
-                          width: 56,
-                          height: 56,
-                          decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-
-                        const SizedBox(width: 12),
-
-                        /// INFO
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                product.name,
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              const SizedBox(height: 4),
-                              Text(
-                                product.variant,
-                                style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              const SizedBox(height: 6),
-                              Text(
-                                formatRupiah(product.price),
-                                style: const TextStyle(
-                                  color: Colors.blue,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-
-                        /// QTY CONTROL
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  if (product.qty > 1) {
-                                    product.qty--;
-                                  }
-                                });
-                              },
-                              icon: const Icon(Icons.remove),
-                            ),
-                            Text(product.qty.toString()),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  product.qty++;
-                                });
-                              },
-                              icon: const Icon(Icons.add),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  );
-                }),
-
-                /// TAMBAH PRODUK
-                GestureDetector(
-                  onTap: tambahProduk,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: Colors.blue,
-                        style: BorderStyle.solid,
-                      ),
-                    ),
-                    child: const Center(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
+                      Row(
                         children: [
-                          Icon(Icons.add, color: Colors.blue),
-                          SizedBox(width: 8),
-                          Text(
-                            "Tambah Produk",
-                            style: TextStyle(color: Colors.blue),
+                          /// No Invoice
+                          Expanded(
+                            child: TextField(
+                              readOnly: true,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                labelText: "No. Invoice",
+                                hintText: "#INV-230912",
+                                suffixIcon: const Icon(Icons.copy, size: 18),
+                                filled: true,
+                                fillColor: Colors.grey.shade100,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none,
+                                ),
+                                contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 12,
+                                ),
+                              ),
+                            ),
+                          ),
+
+                          const SizedBox(width: 12),
+
+                          /// Tanggal (Clickable)
+                          Expanded(
+                            child: TextField(
+                              controller: _dateController,
+                              readOnly: true,
+                              onTap: () => _selectDate(context),
+                              decoration: InputDecoration(
+                                isDense: true,
+                                labelText: "Tanggal",
+                                hintText: "Pilih Tanggal",
+                                suffixIcon: const Icon(
+                                  Icons.calendar_today,
+                                  size: 18,
+                                ),
+                                filled: true,
+                                fillColor: Colors.grey.shade100,
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: BorderSide.none,
+                                ),
+                                contentPadding: const EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 12,
+                                ),
+                              ),
+                            ),
                           ),
                         ],
-                      ),
-                    ),
-                  ),
-                ),
-
-                _sectionTitle('RINCIAN PEMBAYARAN'),
-                _card(
-                  child: Column(
-                    children: [
-                      _paymentRow('Subtotal', 'Rp 1.800.000'),
-                      _paymentRow('Diskon', 'Rp 0'),
-                      _paymentRow('Pajak (PPN 11%)', 'Rp 198.000'),
-                      const Divider(),
-                      _paymentRow(
-                        'Total Tagihan',
-                        'Rp 1.998.000',
-                        isTotal: true,
                       ),
                     ],
                   ),
                 ),
-              ],
-            ),
-          ],
+              ),
+
+              Column(
+                children: [
+                  SizedBox(height: 30),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "DAFTAR PRODUK",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: hapusSemua,
+                        child: const Text(
+                          "Hapus Semua",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 12),
+
+                  /// LIST PRODUK
+                  ...controller.products.map((product) {
+                    return Container(
+                      margin: const EdgeInsets.only(bottom: 12),
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey.shade300),
+                      ),
+                      child: Row(
+                        children: [
+                          /// IMAGE PLACEHOLDER
+                          Container(
+                            width: 56,
+                            height: 56,
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade200,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+
+                          const SizedBox(width: 12),
+
+                          /// INFO
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  product.name,
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  product.variant,
+                                  style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                                const SizedBox(height: 6),
+                                Text(
+                                  formatRupiah(product.price),
+                                  style: const TextStyle(
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          /// QTY CONTROL
+                          Row(
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    if (product.qty > 1) {
+                                      product.qty--;
+                                    }
+                                  });
+                                },
+                                icon: const Icon(Icons.remove),
+                              ),
+                              Text(product.qty.toString()),
+                              IconButton(
+                                onPressed: () {
+                                  setState(() {
+                                    product.qty++;
+                                  });
+                                },
+                                icon: const Icon(Icons.add),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    );
+                  }),
+
+                  /// TAMBAH PRODUK
+                  GestureDetector(
+                    onTap: tambahProduk,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Colors.blue,
+                          style: BorderStyle.solid,
+                        ),
+                      ),
+                      child: const Center(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(Icons.add, color: Colors.blue),
+                            SizedBox(width: 8),
+                            Text(
+                              "Tambah Produk",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+
+                  _sectionTitle('RINCIAN PEMBAYARAN'),
+                  _card(
+                    child: Column(
+                      children: [
+                        _paymentRow('Subtotal', 'Rp 1.800.000'),
+                        _paymentRow('Diskon', 'Rp 0'),
+                        _paymentRow('Pajak (PPN 11%)', 'Rp 198.000'),
+                        const Divider(),
+                        _paymentRow(
+                          'Total Tagihan',
+                          'Rp 1.998.000',
+                          isTotal: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
