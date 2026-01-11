@@ -3,38 +3,36 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class BottomNavigation extends StatefulWidget {
+class AnimatedBottomNavigation extends StatefulWidget {
   final int currentIndex;
   final ValueChanged<int> onTap;
 
-  const BottomNavigation({
+  const AnimatedBottomNavigation({
     super.key,
     required this.currentIndex,
     required this.onTap,
   });
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  State<AnimatedBottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation>
+class _BottomNavigationState extends State<AnimatedBottomNavigation>
     with TickerProviderStateMixin {
   late AnimationController _hideBottomBarAnimationController;
 
   final List<IconData> iconList = const [
     Icons.home_rounded,
     Icons.inventory_rounded,
-    // Icons.shopping_cart,
     Icons.bar_chart_rounded,
     Icons.person_rounded,
   ];
 
   final List<String> labels = const [
     'Home',
-    'Stok',
-    // 'Orders',
-    'Laporan',
-    'Akun Saya',
+    'Pproduct',
+    'Reporting',
+    'Profile',
   ];
 
   @override

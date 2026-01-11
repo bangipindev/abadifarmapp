@@ -4,7 +4,7 @@ import 'package:abadifarm/app/modules/product/views/product_view.dart';
 import 'package:abadifarm/app/modules/profile/views/profile_view.dart';
 import 'package:abadifarm/app/modules/reporting/views/reporting_view.dart';
 // import 'package:abadifarm/app/modules/transaction/views/transaction_view.dart';
-import 'package:abadifarm/app/widgets/bottom_navigation.dart';
+import 'package:abadifarm/app/widgets/animated_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -52,7 +52,7 @@ class MainView extends GetView<MainController> {
             children: pagesMenu,
           ),
         ),
-        bottomNavigationBar: BottomNavigation(
+        bottomNavigationBar: AnimatedBottomNavigation(
           currentIndex: controller.currentIndex.value,
           onTap: controller.changeIndex,
         ),

@@ -1,30 +1,18 @@
+import 'package:abadifarm/app/data/models/quick_action.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class QuickActionCard extends StatelessWidget {
-  final String title;
-  // final IconData icon;
-  final Widget icon;
-  final Color bgColor;
-  final Color iconColor;
-  final VoidCallback? onTap;
+  final QuickActionModel data;
 
-  const QuickActionCard({
-    super.key,
-    required this.title,
-    required this.icon,
-    required this.bgColor,
-    required this.iconColor,
-    this.onTap,
-  });
+  const QuickActionCard({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       borderRadius: BorderRadius.circular(16),
-      onTap: onTap,
+      onTap: data.onTap,
       child: Container(
-        width: Get.width * 0.30,
+        // width: Get.width * 0.25,
         padding: const EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -45,13 +33,16 @@ class QuickActionCard extends StatelessWidget {
             Container(
               height: 50,
               width: 50,
-              decoration: BoxDecoration(color: bgColor, shape: BoxShape.circle),
+              decoration: BoxDecoration(
+                color: data.bgColor,
+                shape: BoxShape.circle,
+              ),
               // child: Icon(icon, color: iconColor, size: 22),
-              child: Center(child: icon),
+              child: Center(child: data.icon),
             ),
             const SizedBox(height: 10),
             Text(
-              title,
+              data.title,
               textAlign: TextAlign.center,
               style: const TextStyle(
                 fontSize: 12,

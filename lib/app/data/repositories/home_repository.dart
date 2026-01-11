@@ -1,5 +1,6 @@
 import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
+import 'package:abadifarm/app/data/models/quick_action.dart';
 
 import '../sources/home_local_data.dart';
 import '../models/alert_model.dart';
@@ -25,5 +26,9 @@ class HomeRepository {
 
   List<ListBannerHomeModel> getAllBanner() {
     return HomeLocalData.banner;
+  }
+
+  List<QuickActionModel> getAction() {
+    return HomeLocalData.quickaction;
   }
 }

@@ -4,6 +4,7 @@ import 'package:abadifarm/app/widgets/banner/banner_section.dart';
 import 'package:abadifarm/app/widgets/bestseller/best_seller_section.dart';
 import 'package:abadifarm/app/widgets/kategori/kategori_section.dart';
 import 'package:abadifarm/app/widgets/neworder/new_order.dart';
+import 'package:abadifarm/app/widgets/quick_action/quick_action_section.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -24,6 +25,7 @@ class HomeView extends GetView<HomeController> {
           BannerSection(),
           KategoriSection(),
           NewOrderWidget(),
+          QuickActionSection(),
           AlertSection(),
           BestSellerSection(),
         ],

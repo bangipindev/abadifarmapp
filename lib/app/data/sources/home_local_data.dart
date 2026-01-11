@@ -1,10 +1,11 @@
 import 'package:abadifarm/app/data/models/add_produk.dart';
 import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
+import 'package:abadifarm/app/data/models/quick_action.dart';
 import 'package:abadifarm/app/data/models/stock_barang_model.dart';
-import 'package:abadifarm/app/routes/app_pages.dart';
 import 'package:abadifarm/app/widgets/neworder/order_status.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../models/alert_model.dart';
 import '../models/order_model.dart';
 import '../models/best_seller_model.dart';
@@ -69,32 +70,60 @@ class HomeLocalData {
 
   static List<ListMenuCategoryModel> categories = [
     ListMenuCategoryModel(
-      label: 'Produk',
+      label: 'Karkas',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 1, // Inventory
-      route: Routes.ADD_PRODUCT, // Inventory
+      route: '', // Inventory
     ),
     ListMenuCategoryModel(
-      label: 'Akun',
+      label: 'Boneless',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 4, // Inventory
-      route: Routes.UBAHPASSWORD,
+      route: '',
     ),
     ListMenuCategoryModel(
-      label: 'Toko',
+      label: 'Doc',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 4, // Inventory
-      route: Routes.DETAIL_STORE,
+      route: '',
+    ),
+    ListMenuCategoryModel(
+      label: 'Sayap',
+      icon: 'assets/icon/icon.png',
+      targetType: CategoryTargetType.page,
+      tabIndex: 3,
+      route: '', // Inventory
+    ),
+    ListMenuCategoryModel(
+      label: 'Ayam Ingkung',
+      icon: 'assets/icon/icon.png',
+      targetType: CategoryTargetType.page,
+      tabIndex: 1, // Inventory
+      route: '', // Inventory
+    ),
+    ListMenuCategoryModel(
+      label: 'Ayam Ungkep',
+      icon: 'assets/icon/icon.png',
+      targetType: CategoryTargetType.page,
+      tabIndex: 4, // Inventory
+      route: '',
+    ),
+    ListMenuCategoryModel(
+      label: 'Paha',
+      icon: 'assets/icon/icon.png',
+      targetType: CategoryTargetType.page,
+      tabIndex: 4, // Inventory
+      route: '',
     ),
     ListMenuCategoryModel(
       label: 'Lain-Lain',
       icon: 'assets/icon/icon.png',
       targetType: CategoryTargetType.page,
       tabIndex: 3,
-      route: Routes.ADD_TRANSACTION, // Inventory
+      route: '', // Inventory
     ),
   ];
 
@@ -183,6 +212,30 @@ class HomeLocalData {
       price: 1200000,
       image: 'assets/icon/icon.png',
       status: StockStatus.tersedia,
+    ),
+  ];
+
+  static List<QuickActionModel> quickaction = [
+    QuickActionModel(
+      title: 'Tambah Produk',
+      icon: Icon(Icons.add_box_rounded, color: Colors.white),
+      bgColor: Colors.green,
+      iconColor: Colors.white,
+      onTap: () => Get.toNamed('/add-product'),
+    ),
+    QuickActionModel(
+      title: 'Buat Pesanan',
+      icon: Icon(Icons.shopping_cart, color: Colors.white),
+      bgColor: Colors.green,
+      iconColor: Colors.white,
+      onTap: () => Get.toNamed('/add-transaction'),
+    ),
+    QuickActionModel(
+      title: 'Edit Toko',
+      icon: Icon(Icons.edit, color: Colors.white),
+      bgColor: Colors.green,
+      iconColor: Colors.white,
+      onTap: () => Get.toNamed('/detail-store'),
     ),
   ];
 }

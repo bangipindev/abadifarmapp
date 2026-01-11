@@ -8,7 +8,7 @@ abstract class Routes {
   // ignore: constant_identifier_names
   static const NAVIGATION = _Paths.NAVIGATION;
   // ignore: constant_identifier_names
-  static const INVENTORY = _Paths.INVENTORY;
+  static const PRODUCT = _Paths.PRODUCT;
   // ignore: constant_identifier_names
   static const REPORTING = _Paths.REPORTING;
   // ignore: constant_identifier_names
@@ -30,7 +30,7 @@ abstract class _Paths {
   // ignore: constant_identifier_names
   static const NAVIGATION = '/navigation';
   // ignore: constant_identifier_names
-  static const INVENTORY = '/inventory';
+  static const PRODUCT = '/product';
   // ignore: constant_identifier_names
   static const REPORTING = '/reporting';
   // ignore: constant_identifier_names
@@ -41,6 +41,6 @@ abstract class _Paths {
   static const MAIN = '/main';
   static const DETAIL_STORE = '/detail-store';
   static const UBAHPASSWORD = '/ubahpassword';
-  static const ADD_TRANSACTION = '/add_transaction';
-  static const ADD_PRODUCT = '/add_product';
+  static const ADD_TRANSACTION = '/add-transaction';
+  static const ADD_PRODUCT = '/add-product';
 }

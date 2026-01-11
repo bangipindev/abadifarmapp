@@ -3,6 +3,7 @@ import 'package:abadifarm/app/data/models/banner_home.dart';
 import 'package:abadifarm/app/data/models/best_seller_model.dart';
 import 'package:abadifarm/app/data/models/list_menu_category.dart';
 import 'package:abadifarm/app/data/models/order_model.dart';
+import 'package:abadifarm/app/data/models/quick_action.dart';
 import 'package:abadifarm/app/data/repositories/home_repository.dart';
 import 'package:get/get.dart';
 
@@ -16,6 +17,7 @@ class HomeController extends GetxController {
   final bestProducts = <BestSellerModel>[].obs;
   final categories = <ListMenuCategoryModel>[].obs;
   final banner = <ListBannerHomeModel>[].obs;
+  final quickaction = <QuickActionModel>[].obs;
 
   @override
   void onInit() {
@@ -29,5 +31,6 @@ class HomeController extends GetxController {
     bestProducts.assignAll(repository.getBestProducts());
     categories.assignAll(repository.getCategories());
     banner.assignAll(repository.getAllBanner());
+    quickaction.assignAll(repository.getAction());
   }
 }
