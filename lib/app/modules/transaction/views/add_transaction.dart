@@ -54,10 +54,7 @@ class _TransaksiBaruPageState extends State<TransaksiBaruPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[100],
-      appBar: AppBar(
-        title: const Text('Transaksi Baru'),
-        actions: [TextButton(onPressed: () {}, child: const Text('Simpan'))],
-      ),
+      appBar: AppBar(title: const Text('Transaksi Baru')),
       bottomNavigationBar: _bottomBar(),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -341,18 +338,20 @@ class _TransaksiBaruPageState extends State<TransaksiBaruPage> {
 
   /// ================= BOTTOM BAR =================
   Widget _bottomBar() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
-      ),
-      child: ElevatedButton(
-        onPressed: () {},
-        style: ElevatedButton.styleFrom(
-          minimumSize: const Size(double.infinity, 48),
+    return SafeArea(
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)],
         ),
-        child: const Text('Bayar Sekarang'),
+        child: ElevatedButton(
+          onPressed: () {},
+          style: ElevatedButton.styleFrom(
+            minimumSize: const Size(double.infinity, 48),
+          ),
+          child: Text('Simpan'),
+        ),
       ),
     );
   }

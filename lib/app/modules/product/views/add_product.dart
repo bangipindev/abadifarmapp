@@ -183,6 +183,7 @@ class _TambahMasterBarangPageState extends State<TambahMasterBarangPage> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       ),
       initialValue: selectedKategori,
+      hint: const Text("Pilih Kategori"),
       items: kategoriList
           .map((e) => DropdownMenuItem(value: e, child: Text(e)))
           .toList(),
